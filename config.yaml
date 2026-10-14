@@ -10,6 +10,7 @@ paths:
   work_dir: work               # big files: image cache, features, models (git-ignored)
   results_dir: results         # small csv/json/png outputs (committed)
   manifest: data/manifest.csv  # path,label,split,class_id (committed, shared by everyone)
+  label_exclusions: data/label_exclusions.csv  # path,reason: photos removed after the label audit (stage 15)
 
 dataset:
   classes: [early_blight, late_blight, septoria_leaf_spot, leaf_mold, yellow_leaf_curl_virus, healthy]
@@ -41,6 +42,9 @@ dataset:
 
 preprocess:
   image_size: 256              # every image is resized to image_size x image_size once and cached
+  # source-shortcut controls (section 15, stage 2). Leave null for the main run; set in configs/*.yaml variants.
+  degrade_to: null             # (a) V1: shrink to this size, then back to image_size (same effective resolution)
+  reencode_quality: null       # (d) JPEG-encode every cached image at this quality (same compression)
 
 segmentation:
   method: hsv                  # hsv (fast) | grabcut (better, ~10x slower) | none
@@ -76,6 +80,46 @@ perturbations:                 # applied to the TEST set only
   contrast: [0.5, 0.7, 1.5, 2.0]         # factor around the image mean
   shadow: [0.3, 0.5, 0.7]                # darkening strength of a soft diagonal shadow
   background: [gray, noise, soil, grass] # synthetic replacement of the non-leaf region
+
+# Extended set (section 15, stage 4). Used by scripts 12/13 only; stages 02 and 06-08 keep the core set above.
+perturbations_extended:
+  gamma: [0.5, 0.7, 1.5, 2.0]
+  color_cast: [-0.3, -0.15, 0.15, 0.3]   # + warm (red up, blue down), - cool
+  blur: [1, 2, 3]                        # Gaussian sigma in px (at 256 px)
+  motion_blur: [5, 9, 15]                # kernel length in px, random direction
+  jpeg: [50, 30, 15]                     # JPEG quality
+  noise: [5, 10, 20]                     # additive Gaussian sigma (0-255 scale)
+  downup: [0.5, 0.25, 0.125]             # shrink by this factor, then back up: tests the resolution shortcut directly
+  occlusion: [0.1, 0.2, 0.3]             # fraction of the frame covered by a grey rectangle
+  rotate: [15, 30, 45]                   # degrees, random sign, reflected border
+  scale: [0.8, 1.2, 1.4]                 # <1 zoom out (reflected border), >1 zoom in
+perturbation_combos:                     # "kind@level+kind@level", applied left to right
+  - brightness@0.7+shadow@0.5
+  - contrast@1.5+noise@10
+  - downup@0.25+jpeg@30
+perturb_settings:
+  # background replacement uses ONE fixed mask per image, computed once with this method and cached, whatever mask the
+  # features use. Fixes problem 23 (with segmentation "none" the old code replaced nothing). null = old behaviour.
+  reference_mask: grabcut     # problem 23 asks for GrabCut; computed once per image, so the ~10x cost is paid once
+
+# Evaluation protocol (section 15, stage 1): scripts/13_protocol.py
+protocol:
+  mode: repeated_split         # repeated_split: n_repeats grouped 70/15/15 splits (seed, seed+1, ...; the first is the
+                               #   committed split) | repeated_cv: cv_repeats x n_folds grouped CV
+  n_repeats: 10
+  n_folds: 5
+  cv_repeats: 3
+  val_frac: 0.15               # repeated_cv / leave-one-cluster-out: grouped share of the training part used for tuning
+  models: [rf, svm, lr]
+  feature_sets: [all, color, texture, shape, color+texture, pruned, meta]
+  perturbed_sets: [all, color+texture]   # also scored under every perturbation (needs scripts/12)
+
+# Source-shortcut controls (section 15, stage 2): scripts/13 (pruned, meta) and scripts/14
+shortcut:
+  corr_targets: [log_pixels, bytes_per_pixel]
+  corr_threshold: 0.5          # (c) drop features with |Spearman| above this with any target (training rows only)
+  min_side: 500                # (a) V2: keep only images with both sides >= this many px
+  cluster_k: [3, 4, 5, 6, 7, 8]  # (b) candidate numbers of source clusters, chosen by silhouette
 
 explain:
   cv_folds: 5

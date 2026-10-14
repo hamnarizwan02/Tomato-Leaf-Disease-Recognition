@@ -1,0 +1,9 @@
+{
+  "n_images": 813,
+  "n_source_groups": 769,
+  "mean_images_per_group": 1.0572171651495448,
+  "frac_images_marked_augmented": 0.0,
+  "n_groups_spanning_multiple_splits": 0,
+  "frac_images_in_cross_split_groups": NaN,
+  "counts": {}
+}

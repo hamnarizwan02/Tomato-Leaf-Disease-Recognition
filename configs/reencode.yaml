@@ -1,0 +1,4 @@
+# Source-shortcut control (d): every image resized and JPEG-encoded identically (quality 85) before features.
+# Run with its own work/results dirs (python run_pipeline.py variants).
+preprocess:
+  reencode_quality: 85

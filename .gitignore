@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.DS_Store
+
+# local data and derived outputs from run_pipeline.py
+data/raw/
+work*/
+archive_v1/
+results_export/
+results.zip
+.pipeline_env.json
+
+# dataset zip
+*.zip

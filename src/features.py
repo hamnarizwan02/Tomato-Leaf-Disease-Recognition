@@ -4,9 +4,14 @@ Every feature name starts with its group prefix: color_*, texture_*, shape_*.
 All statistics are computed on the leaf mask only (see segment.py), not on the background.
 Features are extracted in parallel from the cached 256x256 images and stored as ONE matrix per split
 (work/features/clean_{split}.npy) plus feature_names.json; feature sets are column slices by prefix.
+work/features/clean_all.npy holds every image in manifest order (any split or CV fold is then a row selection), and
+work/features/perturbed/all/{condition}.npy the same for each perturbation (scripts/12). Both carry an extraction key
+(manifest + preprocessing + segmentation + feature settings) so stale matrices are refused instead of silently reused.
 """
 from __future__ import annotations
 
+import hashlib
+import json
 import os
 from collections import OrderedDict
 
@@ -15,7 +20,7 @@ import numpy as np
 from joblib import Parallel, delayed
 from skimage.feature import graycomatrix, graycoprops, local_binary_pattern
 
-from .data import SPLITS
+from .data import SPLITS, manifest_hash, ref_mask_file, split_indices
 from .perturb import perturb
 from .segment import segment_leaf
 from .utils import load_json, save_json
@@ -34,8 +39,24 @@ FEATURE_SETS = {
 
 
 def worker_cfg(cfg) -> dict:
-    """Small picklable subset of the config sent to joblib workers."""
-    return {"seed": cfg["seed"], "segmentation": cfg["segmentation"], "features": cfg["features"]}
+    """Small picklable subset of the config sent to joblib workers. Call data.ensure_ref_masks first when the
+    run perturbs backgrounds, so the reference mask file exists."""
+    ref = None
+    if (cfg.get("perturb_settings") or {}).get("reference_mask") and ref_mask_file(cfg).exists():
+        ref = str(ref_mask_file(cfg))
+    return {"seed": cfg["seed"], "segmentation": cfg["segmentation"], "features": cfg["features"], "ref_mask": ref}
+
+
+def extraction_key(cfg, df, perturbed: bool = False, condition: str = "") -> str:
+    """Identifies what a stored feature matrix was computed from. Only background conditions depend on the
+    reference mask, so switching the mask invalidates those alone."""
+    blob = {"manifest": manifest_hash(df), "preprocess": cfg["preprocess"], "segmentation": cfg["segmentation"],
+            "features": cfg["features"]}
+    if perturbed:   # the perturbations are seeded
+        blob["seed"] = cfg["seed"]
+        if "background" in condition:
+            blob["reference_mask"] = (cfg.get("perturb_settings") or {}).get("reference_mask")
+    return hashlib.md5(json.dumps(blob, sort_keys=True, default=str).encode()).hexdigest()
 
 
 # --------------------------------------------------------------------------- color
@@ -218,3 +239,72 @@ def columns_for_set(names: list[str], set_name: str) -> np.ndarray:
 
 def group_columns(names: list[str]) -> dict[str, np.ndarray]:
     return {g: np.array([i for i, n in enumerate(names) if n.split("_")[0] == g]) for g in GROUPS}
+
+
+# --------------------------------------------------------------------------- all-image store (Phase 1)
+def save_all_features(cfg, df, X_all: np.ndarray) -> None:
+    d = feature_dir(cfg)
+    np.save(d / "clean_all.npy", X_all)
+    save_json({"key": extraction_key(cfg, df), "n": len(X_all)}, d / "clean_all.meta.json")
+
+
+def load_all_features(cfg, df):
+    """(X, names) for EVERY manifest row in manifest order. Assembled from the split files when clean_all.npy is
+    missing (work dirs from before Phase 1)."""
+    d = feature_dir(cfg)
+    names = load_json(d / "feature_names.json") if (d / "feature_names.json").exists() else None
+    if names is None:
+        raise FileNotFoundError("Clean features missing. Run scripts/03_extract_features.py first.")
+    f, meta = d / "clean_all.npy", d / "clean_all.meta.json"
+    if f.exists() and meta.exists():
+        if load_json(meta)["key"] != extraction_key(cfg, df):
+            raise RuntimeError("clean_all.npy was built from another manifest or config. "
+                               "Run scripts/03_extract_features.py --force")
+        return np.load(f), names
+    X = np.zeros((len(df), len(names)), np.float32)
+    idx = split_indices(df)
+    for s in SPLITS:
+        Xs = np.load(d / f"clean_{s}.npy")
+        if len(Xs) != len(idx[s]):
+            raise RuntimeError(f"clean_{s}.npy has {len(Xs)} rows, the manifest {len(idx[s])}: re-run stage 03 --force")
+        X[idx[s]] = Xs
+    print("note: clean_all.npy missing, assembled from the split files (run stage 03 once to store it)")
+    return X, names
+
+
+def perturbed_all_dir(cfg):
+    d = perturbed_dir(cfg) / "all"
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
+def perturbed_index(cfg) -> dict:
+    f = perturbed_all_dir(cfg) / "index.json"
+    return load_json(f) if f.exists() else {}
+
+
+def save_perturbed_all(cfg, df, name: str, X: np.ndarray) -> None:
+    d = perturbed_all_dir(cfg)
+    np.save(d / f"{name}.npy", X)
+    idx = perturbed_index(cfg)
+    idx[name] = extraction_key(cfg, df, perturbed=True, condition=name)
+    save_json(idx, d / "index.json")
+
+
+def load_perturbed_all(cfg, df, names: list[str]) -> dict[str, np.ndarray]:
+    """{condition: X (all rows)} for the conditions that exist and match the current manifest/config."""
+    d, idx = perturbed_all_dir(cfg), perturbed_index(cfg)
+    out, stale, missing = {}, [], []
+    for n in names:
+        if idx.get(n) == extraction_key(cfg, df, perturbed=True, condition=n) and (d / f"{n}.npy").exists():
+            out[n] = np.load(d / f"{n}.npy", mmap_mode="r")
+        elif n in idx:
+            stale.append(n)
+        else:
+            missing.append(n)
+    if stale:
+        print(f"WARNING: {len(stale)} perturbed matrices are stale (other manifest/config), skipped: {stale[:5]} "
+              "-> run scripts/12_extract_perturbed.py --force")
+    if missing:
+        print(f"note: {len(missing)} conditions not extracted yet, skipped: {missing[:5]} (scripts/12)")
+    return out
