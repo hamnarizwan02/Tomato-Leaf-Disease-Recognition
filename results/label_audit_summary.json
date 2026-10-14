@@ -1,0 +1,21 @@
+{
+  "n_images": 813,
+  "n_wrong_out_of_fold": 308,
+  "n_confident_learning_flags": 139,
+  "flags_by_label": {
+    "septoria_leaf_spot": 35,
+    "early_blight": 33,
+    "leaf_mold": 26,
+    "yellow_leaf_curl_virus": 17,
+    "late_blight": 14,
+    "healthy": 14
+  },
+  "class_thresholds": {
+    "early_blight": 0.301,
+    "late_blight": 0.33,
+    "septoria_leaf_spot": 0.309,
+    "leaf_mold": 0.532,
+    "yellow_leaf_curl_virus": 0.365,
+    "healthy": 0.492
+  }
+}
