@@ -100,9 +100,13 @@ def _proba_full(model, X, k: int) -> np.ndarray:
 
 
 def run_protocol(splits, y, fsets: list[FeatureSet], models, cfg, perturbed: dict | None = None,
-                 perturbed_sets=(), conditions_meta: dict | None = None, keep_predictions: bool = True):
+                 perturbed_sets=(), conditions_meta: dict | None = None, keep_predictions: bool = True,
+                 augment: dict | None = None):
     """Returns dict of DataFrames: metrics (one row per split x set x model x condition), params, selective,
-    predictions (long format, optional). perturbed: {condition: X_all} for the main feature matrix."""
+    predictions (long format, optional). perturbed: {condition: X_all} for the main feature matrix.
+    augment: {"X": features of augmented copies, "src": manifest row each copy was made from} (src/augment.py). Copies
+    whose source is in the split's TRAIN rows are added to the training data for tuning and for the refit (validation
+    rows enter the refit unaugmented); only perturbable feature sets are augmented."""
     classes = cfg["dataset"]["classes"]
     k = len(classes)
     perturbed = perturbed or {}
@@ -113,14 +117,29 @@ def run_protocol(splits, y, fsets: list[FeatureSet], models, cfg, perturbed: dic
         tv = np.concatenate([tr, va])
         info = {key: s[key] for key in ("id", "seed", "fold", "cluster") if key in s}
         info["split"] = info.pop("id")
+        aug_rows = np.zeros(0, int)
+        if augment is not None:
+            aug_rows = np.where(np.isin(augment["src"], tr))[0]
+            if np.isin(augment["src"][aug_rows], np.concatenate([va, te])).any():
+                raise AssertionError("augmented copy of a validation/test image selected for training")
         with Timer(f"split {info['split']}: train {len(tr)}, val {len(va)}, test {len(te)}"):
             for fs in fsets:
                 cols = fs.columns(tv)
+                Xtr, ytr, Xtv, ytv = fs.X[tr][:, cols], y[tr], fs.X[tv][:, cols], y[tv]
+                n_aug = 0
+                # only rebuild the training arrays when copies are actually added: np.vstack returns a C-ordered copy,
+                # and StandardScaler sums in a different order on it than on the (F-ordered) metadata matrix
+                if augment is not None and fs.perturbable and len(aug_rows):
+                    Xa, ya = augment["X"][aug_rows][:, cols], y[augment["src"][aug_rows]]
+                    Xtr, ytr = np.vstack([Xtr, Xa]), np.concatenate([ytr, ya])
+                    Xtv, ytv = np.vstack([Xtv, Xa]), np.concatenate([ytv, ya])
+                    n_aug = len(ya)
                 for mname in models:
-                    best, table = tune(mname, fs.X[tr][:, cols], y[tr], fs.X[va][:, cols], y[va], cfg)
-                    model = make_model(mname, best, cfg, proba=True).fit(fs.X[tv][:, cols], y[tv])
+                    best, table = tune(mname, Xtr, ytr, fs.X[va][:, cols], y[va], cfg)
+                    model = make_model(mname, best, cfg, proba=True).fit(Xtv, ytv)
                     params.append({**info, "feature_set": fs.name, "model": mname, "n_features": len(cols),
-                                   "params": str(best), "val_macro_f1": float(table.val_macro_f1.max())})
+                                   "params": str(best), "val_macro_f1": float(table.val_macro_f1.max()),
+                                   **({"n_aug_train": n_aug} if augment is not None else {})})
                     conds = [("clean", fs.X)]
                     if fs.perturbable and fs.name in perturbed_sets:
                         conds += list(perturbed.items())

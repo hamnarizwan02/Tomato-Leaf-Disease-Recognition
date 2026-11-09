@@ -31,7 +31,8 @@ from src.metadata import META_FEATURES, image_metadata, pruned_columns, shortcut
 from src.perturb import IDENTITY, all_conditions, condition_name  # noqa: E402
 from src.protocol import FeatureSet, make_splits, run_protocol, summarise  # noqa: E402
 from src.stats import paired_table  # noqa: E402
-from src.utils import set_seed  # noqa: E402
+from src.augment import load_augmented  # noqa: E402
+from src.utils import save_json, set_seed  # noqa: E402
 
 
 def comparisons(sets, models):
@@ -62,6 +63,8 @@ def main():
     ap.add_argument("--min-side", type=int, default=0, help="keep only images with both sides >= this (V2)")
     ap.add_argument("--tag", help="output folder suffix (default from the options)")
     ap.add_argument("--no-predictions", action="store_true", help="do not store per-image predictions")
+    ap.add_argument("--augment", action="store_true",
+                    help="train-only augmentation from config['augmentation'] (needs scripts/16 with the same config)")
     args = ap.parse_args()
 
     cfg = load_config()
@@ -70,7 +73,10 @@ def main():
     mode = args.mode or p["mode"]
     sets = args.sets or p["feature_sets"]
     models = args.models or p["models"]
-    tag = args.tag or ((f"min_side{args.min_side}" if args.min_side else "main")
+    if args.augment and not cfg.get("augmentation"):
+        raise SystemExit("--augment needs an augmentation block, e.g. TOMATO_CONFIG=configs/aug_geo.yaml")
+    tag = args.tag or ((f"aug_{cfg['augmentation']['name']}" if args.augment else
+                        f"min_side{args.min_side}" if args.min_side else "main")
                        + ("_cv" if mode == "repeated_cv" else ""))
     res = cfg["paths"]["results_dir"] / f"protocol_{tag}"
     work = cfg["paths"]["work_dir"] / f"protocol_{tag}"
@@ -119,8 +125,30 @@ def main():
         perturbed = load_perturbed_all(cfg, df, list(cmeta))
         print(f"{len(perturbed)}/{len(cmeta)} perturbation conditions available")
 
+    augment = None
+    if args.augment:
+        augment = load_augmented(cfg, df)
+        groups = df["group"].to_numpy(dtype=object)
+        check = []
+        for s in splits:
+            sel = np.isin(augment["src"], s["train"])
+            held = np.concatenate([s["val"], s["test"]])
+            check.append({"split": s["id"], "n_train": len(s["train"]), "n_aug_selected": int(sel.sum()),
+                          "n_sources": int(np.unique(augment["src"][sel]).size),
+                          "sources_not_in_train": int((~np.isin(augment["src"][sel], s["train"])).sum()),
+                          "sources_in_val_or_test": int(np.isin(augment["src"][sel], held).sum()),
+                          "source_groups_in_val_or_test": int(np.isin(groups[augment["src"][sel]], groups[held]).sum())})
+        check = pd.DataFrame(check)
+        check.to_csv(res / "augmentation_leakage_check.csv", index=False)
+        if check[["sources_not_in_train", "sources_in_val_or_test", "source_groups_in_val_or_test"]].values.any():
+            raise SystemExit(f"augmentation leakage detected, see {res / 'augmentation_leakage_check.csv'}")
+        save_json({"augmentation": cfg["augmentation"], "seed": cfg["seed"], "n_aug_total": len(augment["src"])},
+                  res / "augmentation_settings.json")
+        print(f"augmentation '{cfg['augmentation']['name']}': {len(augment['src'])} copies stored; per split "
+              f"{check.n_aug_selected.min()}-{check.n_aug_selected.max()} added to training; leakage check passed")
+
     out = run_protocol(splits, y, fsets, models, cfg, perturbed, p["perturbed_sets"], cmeta,
-                       keep_predictions=not args.no_predictions)
+                       keep_predictions=not args.no_predictions, augment=augment)
     m = out["metrics"]
     m.to_csv(res / "metrics_per_split.csv", index=False)
     out["params"].to_csv(res / "chosen_params.csv", index=False)

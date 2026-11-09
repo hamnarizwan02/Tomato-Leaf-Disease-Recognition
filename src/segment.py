@@ -10,6 +10,11 @@ import cv2
 import numpy as np
 from scipy import ndimage as ndi
 
+# grabCut initialises its colour models with OpenCV's global RNG (k-means), whose state carries over between calls,
+# so the same image gave different masks depending on call order. Reseeding before every call makes the
+# mask a function of the input alone. Changing this value changes every GrabCut mask (re-run with --force).
+GRABCUT_RNG_SEED = 0
+
 
 def _clean(m: np.ndarray, close_px: int = 5) -> np.ndarray:
     h, w = m.shape
@@ -42,6 +47,7 @@ def _grabcut(img_rgb: np.ndarray, init: np.ndarray, iters: int) -> np.ndarray:
         return init
     try:
         bgd, fgd = np.zeros((1, 65)), np.zeros((1, 65))
+        cv2.setRNGSeed(GRABCUT_RNG_SEED)
         cv2.grabCut(cv2.cvtColor(img_rgb, cv2.COLOR_RGB2BGR), gc, None, bgd, fgd, iters, cv2.GC_INIT_WITH_MASK)
     except cv2.error:
         return init

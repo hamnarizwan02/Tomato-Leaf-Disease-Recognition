@@ -1,0 +1,10 @@
+# Phase 2, experiment A — A1 geometric: 4 copies per TRAINING image, random h/v flips and a small rotation.
+# Ranges fixed in advance (not tuned). Deterministic per (seed, manifest row, copy) — src/augment.py.
+augmentation:
+  name: geo
+  copies: 4
+  hflip_p: 0.5
+  vflip_p: 0.5
+  rotate_deg: 15              # uniform in [-15, 15] degrees, reflected border
+  brightness: null
+  contrast: null

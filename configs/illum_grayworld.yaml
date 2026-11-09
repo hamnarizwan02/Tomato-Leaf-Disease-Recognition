@@ -1,0 +1,6 @@
+# Phase 2, experiment B — Gray World colour constancy: per image, scale R, G, B so their means equal the grey mean.
+# Applied after any test perturbation and before segmentation/features (src/illumination.py). No augmentation.
+# Run with its own work/results dirs; features and perturbed features are re-extracted (cache key includes preprocess).
+preprocess:
+  illumination:
+    method: grayworld

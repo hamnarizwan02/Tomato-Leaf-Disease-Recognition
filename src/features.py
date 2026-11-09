@@ -21,6 +21,7 @@ from joblib import Parallel, delayed
 from skimage.feature import graycomatrix, graycoprops, local_binary_pattern
 
 from .data import SPLITS, manifest_hash, ref_mask_file, split_indices
+from .illumination import normalize
 from .perturb import perturb
 from .segment import segment_leaf
 from .utils import load_json, save_json
@@ -44,7 +45,8 @@ def worker_cfg(cfg) -> dict:
     ref = None
     if (cfg.get("perturb_settings") or {}).get("reference_mask") and ref_mask_file(cfg).exists():
         ref = str(ref_mask_file(cfg))
-    return {"seed": cfg["seed"], "segmentation": cfg["segmentation"], "features": cfg["features"], "ref_mask": ref}
+    return {"seed": cfg["seed"], "segmentation": cfg["segmentation"], "features": cfg["features"], "ref_mask": ref,
+            "illumination": cfg["preprocess"].get("illumination")}
 
 
 def extraction_key(cfg, df, perturbed: bool = False, condition: str = "") -> str:
@@ -192,6 +194,7 @@ def _worker(cache_path: str, idx_chunk, sub: dict, cond):
         img = np.ascontiguousarray(arr[i])
         if cond is not None:
             img = perturb(img, cond[0], cond[1], int(i), sub)
+        img = normalize(img, sub.get("illumination"))       # experiment B; no-op unless preprocess.illumination is set
         rows.append(np.fromiter(extract_named(img, sub).values(), dtype=np.float32))
     return np.stack(rows)
 
