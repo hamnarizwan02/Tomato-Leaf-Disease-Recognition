@@ -5,9 +5,11 @@ Thin launcher only: all logic lives in src/ and scripts/. Run from the repo root
     python run_pipeline.py setup --zip ~/Downloads/Tomato_Leaf_Disease_Dataset_Pakistan.zip
     python run_pipeline.py stage 00 01 02        # run selected stages
     python run_pipeline.py all                   # stages 00-11 in order
+    python run_pipeline.py phase1                # Phase 1: stages 12-15 (perturbed features, protocol, shortcut, labels)
+    python run_pipeline.py variants              # shortcut controls: resolution-matched, re-encoded, min side 500
     python run_pipeline.py seg-compare           # HSV vs GrabCut vs no mask
     python run_pipeline.py archive               # v2 re-run: archive old results, clear derived files
-    python run_pipeline.py export                # zip results/ (+ results_seg_*) and the manifest
+    python run_pipeline.py export                # zip results/ (+ results_* variants) and the manifest
 """
 import argparse
 import glob
@@ -39,9 +41,18 @@ STAGES = {
     "09": [("09_figures.py", [])],
     "10": [("10_source_shortcut_check.py", [])],
     "11": [("11_repeated_splits.py", ["--seeds", "5"])],
+    # Phase 1 (section 15 of the findings log)
+    "12": [("12_extract_perturbed.py", ["--benchmark", "20"]), ("12_extract_perturbed.py", [])],
+    "13": [("13_protocol.py", [])],
+    "14": [("14_shortcut_controls.py", [])],
+    "15": [("15_label_audit.py", [])],
 }
+CORE_STAGES = [f"{i:02d}" for i in range(12)]
+PHASE1_STAGES = ["12", "13", "14", "15"]
 
 SEG_VARIANTS = {"none": "configs/seg_none.yaml", "grabcut": "configs/seg_grabcut.yaml"}
+# source-shortcut controls (a) V1 and (d): each rebuilds its own image cache from the raw photos
+SHORTCUT_VARIANTS = {"res_matched": "configs/res_matched.yaml", "reencode": "configs/reencode.yaml"}
 
 
 def run(cmd, env=None):
@@ -100,8 +111,27 @@ def cmd_stage(args):
 
 
 def cmd_all(args):
-    args.ids = list(STAGES)
+    args.ids = CORE_STAGES
     cmd_stage(args)
+
+
+def cmd_phase1(args):
+    args.ids = PHASE1_STAGES
+    cmd_stage(args)
+
+
+def cmd_variants(args):
+    """Same manifest and split; only the image preprocessing changes. Clean protocol only (no perturbations)."""
+    base = pipeline_env()
+    for name, cfgfile in SHORTCUT_VARIANTS.items():
+        env = dict(base, TOMATO_CONFIG=cfgfile, TOMATO_WORK_DIR=os.path.join(REPO, f"work_{name}"),
+                   TOMATO_RESULTS_DIR=os.path.join(REPO, f"results_{name}"))
+        for script, extra in [("01_prepare_data.py", ["--cache-only"]), ("03_extract_features.py", []),
+                              ("13_protocol.py", ["--no-perturbed", "--tag", name])]:
+            print(f"===== {name}: {script}", flush=True)
+            run([sys.executable, f"scripts/{script}", *extra], env=env)
+    print("===== min side 500: 13_protocol.py", flush=True)
+    run([sys.executable, "scripts/13_protocol.py", "--no-perturbed", "--min-side", "500"], env=base)
 
 
 def cmd_seg_compare(args):
@@ -138,7 +168,8 @@ def cmd_export(args):
     stage = os.path.join(REPO, "results_export")
     shutil.rmtree(stage, ignore_errors=True)
     os.makedirs(stage)
-    for d in [RESULTS_DIR] + sorted(glob.glob(os.path.join(REPO, "results_seg_*"))):
+    variants = [d for d in sorted(glob.glob(os.path.join(REPO, "results_*"))) if d != stage]
+    for d in [RESULTS_DIR] + variants:
         if os.path.isdir(d):
             shutil.copytree(d, os.path.join(stage, os.path.basename(d)))
     manifest = os.path.join(REPO, "data", "manifest.csv")
@@ -163,6 +194,9 @@ def main():
     s.set_defaults(func=cmd_stage)
 
     sub.add_parser("all", help="run stages 00-11 in order").set_defaults(func=cmd_all)
+    sub.add_parser("phase1", help="run Phase 1 stages 12-15").set_defaults(func=cmd_phase1)
+    sub.add_parser("variants", help="shortcut controls (resolution-matched, re-encoded, min side 500)"
+                   ).set_defaults(func=cmd_variants)
     sub.add_parser("seg-compare", help="HSV vs GrabCut vs no mask").set_defaults(func=cmd_seg_compare)
     sub.add_parser("archive", help="archive the first run and clear derived files").set_defaults(func=cmd_archive)
     sub.add_parser("export", help="collect results into results.zip").set_defaults(func=cmd_export)

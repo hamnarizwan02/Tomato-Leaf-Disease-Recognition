@@ -1,0 +1,8 @@
+Building image cache (7754 images -> 256x256) ...
+Saved F:\NUST\ML\runs\p4_multisource\work\images_cache.npy  (1.52 GB)
+cache: 491s
+features: hand (7754, 105), lesion (7754, 20) in 805s
+
+real	22m28.421s
+user	0m0.015s
+sys	0m0.015s

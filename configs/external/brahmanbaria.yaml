@@ -1,0 +1,9 @@
+# Bangladesh, Brahmanbaria: Oni & Prama, Data in Brief 2025, Mendeley Data DOI 10.17632/rnbsw72zb5.1.
+# Field photos with YOLO leaf boxes, two classes only. Box ids checked by eye on 12 random crops each
+# (0 = healthy, 1 = diseased). One image per box via scripts/21_crop_yolo_leaves.py (10% margin, PNG).
+# Binary set: scored as healthy recall and disease detection (predicted as any disease), no per-disease labels.
+name: brahmanbaria
+root: F:/NUST/ML/external/bd_brahmanbaria_crops
+class_map:
+  healthy: healthy
+  diseased: any_disease

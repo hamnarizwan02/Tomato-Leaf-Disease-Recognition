@@ -1,0 +1,76 @@
+# Phase 3 sources (docs/phase3_design_2026-11-12.md). Paths are relative to data_root (F:/NUST/ML).
+# folder name -> [six-class label or null, binary label]. Folders not listed are ignored (e.g. Tomato-Village
+# nutrient deficiencies). Priority decides which copy of a cross-source duplicate is kept (lower number wins).
+data_root: F:/NUST/ML
+raw:
+  root: Tomato Dataset/Dataset (raw)
+  manifest: data/manifest.csv            # the committed 813-image manifest (labels and groups kept)
+  priority: 0
+sources:
+  plantdoc:
+    root: external/plantdoc
+    priority: 1
+    folders:
+      Tomato Early blight leaf: [early_blight, diseased]
+      Tomato leaf late blight: [late_blight, diseased]
+      Tomato Septoria leaf spot: [septoria_leaf_spot, diseased]
+      Tomato mold leaf: [leaf_mold, diseased]
+      Tomato leaf yellow virus: [yellow_leaf_curl_virus, diseased]
+      Tomato leaf: [healthy, healthy]
+      Tomato leaf bacterial spot: [null, diseased]
+      Tomato leaf mosaic virus: [null, diseased]
+      Tomato two spotted spider mites leaf: [null, diseased]
+  plantwild:
+    root: external/plantwild
+    priority: 2
+    folders:
+      tomato early blight: [early_blight, diseased]
+      tomato late blight: [late_blight, diseased]
+      tomato septoria leaf spot: [septoria_leaf_spot, diseased]
+      tomato leaf mold: [leaf_mold, diseased]
+      tomato yellow leaf curl virus: [yellow_leaf_curl_virus, diseased]
+      tomato leaf: [healthy, healthy]
+      tomato bacterial leaf spot: [null, diseased]
+      tomato mosaic virus: [null, diseased]
+  tomato_village:
+    root: external/tomato_village
+    priority: 3
+    folders:
+      Early_blight: [early_blight, diseased]
+      Late_blight: [late_blight, diseased]
+      Healthy: [healthy, healthy]
+      Leaf Miner: [null, diseased]
+      Spotted Wilt Virus: [null, diseased]
+  nazirpur:
+    root: external/bd_nazirpur/TOMATO_LEAF_DATASET
+    priority: 4
+    folders:
+      Disease_Free: [healthy, healthy]
+      Septoria_Leaf_Spot: [septoria_leaf_spot, diseased]
+      Bacterial_Spot: [null, diseased]
+      Blight_Leaf: [null, diseased]          # early or late not stated
+      Fusarium_Wilt: [null, diseased]
+      Leaf_Curl: [null, diseased]            # not necessarily yellow leaf curl virus
+      Mosaic_Virus: [null, diseased]
+      Shot_Hole_Disease: [null, diseased]
+      Yellow_Leaf: [null, diseased]
+  brahmanbaria:
+    root: external/bd_brahmanbaria_crops
+    priority: 5
+    folders:
+      healthy: [healthy, healthy]
+      diseased: [null, diseased]
+  plantvillage:
+    root: external/plantvillage
+    priority: 6
+    folders:
+      Tomato___Early_blight: [early_blight, diseased]
+      Tomato___Late_blight: [late_blight, diseased]
+      Tomato___Septoria_leaf_spot: [septoria_leaf_spot, diseased]
+      Tomato___Leaf_Mold: [leaf_mold, diseased]
+      Tomato___Tomato_Yellow_Leaf_Curl_Virus: [yellow_leaf_curl_virus, diseased]
+      Tomato___healthy: [healthy, healthy]
+      Tomato___Bacterial_spot: [null, diseased]
+      Tomato___Target_Spot: [null, diseased]
+      Tomato___Tomato_mosaic_virus: [null, diseased]
+      Tomato___Spider_mites Two-spotted_spider_mite: [null, diseased]

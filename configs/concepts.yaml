@@ -1,0 +1,34 @@
+# Phase 3 CLIP concepts (docs/phase3_design_2026-11-12.md), fixed before any score was computed.
+# Deep-extractor arm only: CLIP is used FROZEN as a feature extractor; all classifiers are classical ML.
+# Each concept is scored as the cosine similarity between the image embedding and the text embedding of
+# "a photo of <text>". Symptom concepts describe visible disease signs; context concepts describe how the photo was
+# taken (possible shortcuts).
+model: ViT-B-32
+pretrained: openai
+template: "a photo of {}"
+symptom:
+  yellowing: a tomato leaf with yellow discoloration
+  target_spots: a tomato leaf with brown spots with concentric rings
+  dark_lesions: a tomato leaf with large dark brown water-soaked lesions
+  small_grey_spots: a tomato leaf with many small round spots with grey centres and dark borders
+  velvety_mould: a tomato leaf with olive green velvety mould
+  pale_patches: a tomato leaf with pale yellow patches on the upper surface
+  curled_leaves: small curled and crinkled yellow tomato leaves
+  healthy_green: a healthy uniform green tomato leaf
+  necrotic_edges: a tomato leaf with dry dead brown edges
+  mosaic_pattern: a tomato leaf with a light and dark green mosaic pattern
+  miner_trails: a tomato leaf with white winding trails
+  tiny_dark_spots: a tomato leaf with tiny dark spots
+  wilting: a wilted drooping tomato leaf
+  holes: a tomato leaf with holes
+context:
+  plain_background: a leaf against a plain white or grey background
+  in_hand: a leaf held in a person's hand
+  field_soil: a leaf on a plant in a field with soil visible
+  leaf_fills_frame: a close-up where one leaf fills the frame
+  blurry: a blurry out-of-focus picture
+  underexposed: a dark underexposed picture
+  harsh_sunlight: a picture with strong sunlight and harsh shadows
+  watermark: an image with text or a watermark
+  cluttered_background: many leaves and plants in the background
+  studio: a studio picture taken in a laboratory

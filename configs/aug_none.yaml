@@ -1,0 +1,10 @@
+# Phase 2, experiment A — A0 control: the augmentation code path with zero copies (must reproduce the main protocol).
+# Run with its own work/results dirs; see scripts/16_extract_augmented.py and scripts/13_protocol.py --augment.
+augmentation:
+  name: none
+  copies: 0
+  hflip_p: 0.0
+  vflip_p: 0.0
+  rotate_deg: 0
+  brightness: null
+  contrast: null

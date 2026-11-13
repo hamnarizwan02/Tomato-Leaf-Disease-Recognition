@@ -1,0 +1,26 @@
+path,label,best_raw_path,best_corr,sha_match
+train/Tomato Early blight leaf/1058_0.jpeg_itok=OQkdtxgv.jpg,early_blight,Tomato_Septoria_leaf_spot/1058_0.jpeg_itok=OQkdtxgv.jpg,1.0000001,True
+train/Tomato Early blight leaf/12July_mwnews_3-C.jpg,early_blight,Tomato_Septoria_leaf_spot/12July_mwnews_3-C.jpg,0.9999997,True
+train/Tomato Early blight leaf/b54d0e40027ff5e90e8ba7e1e9abf9bd--garden-guide-garden-ideas.jpg,early_blight,Tomato_Septoria_leaf_spot/b54d0e40027ff5e90e8ba7e1e9abf9bd.jpg,0.9999627,False
+train/Tomato Early blight leaf/blog_early_blight_628.jpg,early_blight,Tomato_Septoria_leaf_spot/blog_early_blight_628.jpg,0.99999994,True
+train/Tomato Early blight leaf/confused-bacterial-canker-early-blight-zoom.JPG.jpg,early_blight,Tomato_Septoria_leaf_spot/EB_(978).jpg,0.9737624,False
+train/Tomato Early blight leaf/ealryblight.jpg,early_blight,Tomato_Septoria_leaf_spot/ealryblight.jpg,1.0000001,True
+train/Tomato Early blight leaf/early-blight-closeup-sm.jpg,early_blight,Tomato_Septoria_leaf_spot/early-blight-closeup-sm.jpg,1.0,True
+train/Tomato Early blight leaf/early-blight-of-tomato-tomato-1.jpg,early_blight,Tomato_Septoria_leaf_spot/early-blight-of-tomato-tomato-1.jpg,0.99999994,True
+train/Tomato Early blight leaf/early-tomato-blight.jpg,early_blight,Tomato_Septoria_leaf_spot/early-tomato-blight.jpg,1.0,True
+train/Tomato Early blight leaf/earlyblightresize.jpg,early_blight,Tomato_Septoria_leaf_spot/earlyblightresize.jpg,1.0,True
+train/Tomato Early blight leaf/gn201410308259997ar-jpg.jpg,early_blight,Tomato_Septoria_leaf_spot/gn201410308259997ar-jpg.jpg,1.0000002,True
+train/Tomato Early blight leaf/Original_e-blight.JPG.rend.hgtvcom.966.725.jpeg.jpg,early_blight,Tomato_Septoria_leaf_spot/EB_(971).jpg,1.0,True
+train/Tomato Early blight leaf/Tomato-blight-large.jpg,early_blight,Tomato_Septoria_leaf_spot/EB_(985).jpg,0.9999999,True
+train/Tomato Early blight leaf/Tomato-diseases-prevention-treatment.-Early-blight..jpg,early_blight,Tomato_Septoria_leaf_spot/EB_(988).jpg,1.0,True
+train/Tomato Early blight leaf/Tomato-Early-Blight-e1513806873934.jpg,early_blight,Tomato_Septoria_leaf_spot/Tomato-Early-Blight-e1513806873934.jpg,1.0,True
+train/Tomato Early blight leaf/Tomato-Early-Blight-Leaves-Cornell-University.jpg,early_blight,Tomato_Septoria_leaf_spot/Tomato-Early-Blight-Leaves-Cornell-University.jpg,1.0,True
+train/Tomato Early blight leaf/tomato_D2b-Early-blight---RPitblado_zoom.jpg,early_blight,Tomato_Septoria_leaf_spot/EB_(978).jpg,1.0,True
+train/Tomato Early blight leaf/tomato_q1hq-early-blight-5052_zoom.jpg,early_blight,Tomato_Septoria_leaf_spot/tomato_q1hq-early-blight-5052_zoom.jpg,1.0,True
+train/Tomato Early blight leaf/web1_copy_early-blight-6-_0.jpg,early_blight,Tomato_Septoria_leaf_spot/web1_copy_early-blight-6-_0.jpg,1.0,True
+train/Tomato leaf/late_blight_tomato_leaf4x1200.jpg,healthy,Tomato_leaf_late_blight/late_blight_tomato_leaf4x1200_jpg.rf.28fa84b6e9cf0f64bf101d64024d631e.jpg,0.9999405,False
+train/Tomato leaf late blight/IMG_2254.JPG.jpg,late_blight,Tomato_Early_blight_leaf/IMG_2254.JPG.jpg,0.99999994,True
+train/Tomato mold leaf/d-to-tylv-fo005-14496A31BE70553130A.jpg,leaf_mold,Tomato_leaf_yellow_curl_virus/d-to-tylv-fo005-14496A31BE70553130A.jpg,0.9999998,True
+train/Tomato mold leaf/gray-leaf-spot-300x225.jpg,leaf_mold,Tomato_Early_blight_leaf/gray-leaf-spot-300x225.jpg,1.0,True
+train/Tomato mold leaf/gray-mold-on-tomato-leaf.jpg,leaf_mold,Tomato_Early_blight_leaf/gray-mold-on-tomato-leaf.jpg,1.0000002,True
+train/Tomato mold leaf/tomato_plants_1_original.JPG_1407178095.jpg,leaf_mold,Tomato_Septoria_leaf_spot/tomato_plants_1_original.JPG_1407178095.jpg,0.9999998,True

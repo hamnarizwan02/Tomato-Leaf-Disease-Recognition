@@ -1,0 +1,14 @@
+{
+  "n_external": 1035,
+  "n_overlap": 0,
+  "n_sha_match": 0,
+  "n_content_match": 0,
+  "n_filename_match": 0,
+  "n_filename_match_confirmed_by_content_or_sha": 0,
+  "n_independent": 1035,
+  "independent_per_class": {
+    "any_disease": 607,
+    "healthy": 428
+  },
+  "overlap_per_class": {}
+}

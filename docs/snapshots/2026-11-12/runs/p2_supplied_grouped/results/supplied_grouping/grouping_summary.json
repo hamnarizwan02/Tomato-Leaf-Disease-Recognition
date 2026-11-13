@@ -1,0 +1,32 @@
+{
+  "n_images_scanned": 7037,
+  "n_pipeline_groups": 1486,
+  "content_threshold": 0.95,
+  "n_content_pairs": 7935,
+  "n_content_pairs_cross_class": 2,
+  "n_names_under_two_classes": 8,
+  "n_images_dropped_cross_class": 20,
+  "n_images_kept": 7017,
+  "n_groups": 936,
+  "n_singletons": 86,
+  "largest_group": 49,
+  "largest_group_frac": 0.006983041185691891,
+  "per_class_kept": {
+    "yellow_leaf_curl_virus": 1200,
+    "healthy": 1200,
+    "septoria_leaf_spot": 1184,
+    "late_blight": 1178,
+    "leaf_mold": 1175,
+    "early_blight": 1080
+  },
+  "per_class_groups": {
+    "early_blight": 133,
+    "healthy": 173,
+    "late_blight": 121,
+    "leaf_mold": 216,
+    "septoria_leaf_spot": 207,
+    "yellow_leaf_curl_virus": 86
+  },
+  "grouped_test_frac_family_in_trainval_max": 0.0,
+  "random_test_frac_family_in_trainval_mean": 0.9873453853472883
+}

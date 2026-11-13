@@ -1,0 +1,17 @@
+condition,kind,level,mean_leaf_area_frac
+clean,clean,none,0.8316042423248291
+brightness_0.5,brightness,0.5,0.7713051438331604
+brightness_0.7,brightness,0.7,0.8113147020339966
+brightness_1.3,brightness,1.3,0.8346832990646362
+brightness_1.6,brightness,1.6,0.7964613437652588
+contrast_0.5,contrast,0.5,0.7023947834968567
+contrast_0.7,contrast,0.7,0.8100460767745972
+contrast_1.5,contrast,1.5,0.821884274482727
+contrast_2.0,contrast,2.0,0.8037217855453491
+shadow_0.3,shadow,0.3,0.8231374621391296
+shadow_0.5,shadow,0.5,0.8072189092636108
+shadow_0.7,shadow,0.7,0.7053290009498596
+background_gray,background,gray,0.7861304879188538
+background_noise,background,noise,0.8705496191978455
+background_soil,background,soil,0.8438358902931213
+background_grass,background,grass,0.9992180466651917

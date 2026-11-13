@@ -1,0 +1,10 @@
+# Bangladesh, Nazirpur (Pirojpur): Bapari, Zitu & Ummehani, Mendeley Data v1, DOI 10.17632/74zvtzx9pr.1, CC BY 4.0.
+# Field photos, cropped to the leaf, no augmentation. Downloaded 2026-11-12 (browser, "Download All").
+# Headline classes only: those whose names match ours unambiguously. Not mapped: Blight_Leaf (early or late is not
+# stated), Bacterial_Spot, Fusarium_Wilt, Mosaic_Virus, Shot_Hole_Disease, Yellow_Leaf, and Leaf_Curl (scored
+# separately in nazirpur_leafcurl.yaml because "leaf curl" is not necessarily yellow leaf curl virus).
+name: nazirpur
+root: F:/NUST/ML/external/bd_nazirpur/TOMATO_LEAF_DATASET
+class_map:
+  Septoria_Leaf_Spot: septoria_leaf_spot
+  Disease_Free: healthy

@@ -1,0 +1,5 @@
+{
+  "n_clusters": 8,
+  "silhouette": 0.4652713361086607,
+  "n_features_above_threshold": 0
+}

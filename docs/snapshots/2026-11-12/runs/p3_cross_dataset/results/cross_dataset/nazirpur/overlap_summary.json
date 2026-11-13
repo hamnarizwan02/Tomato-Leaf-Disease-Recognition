@@ -1,0 +1,14 @@
+{
+  "n_external": 378,
+  "n_overlap": 0,
+  "n_sha_match": 0,
+  "n_content_match": 0,
+  "n_filename_match": 0,
+  "n_filename_match_confirmed_by_content_or_sha": 0,
+  "n_independent": 378,
+  "independent_per_class": {
+    "healthy": 287,
+    "septoria_leaf_spot": 91
+  },
+  "overlap_per_class": {}
+}

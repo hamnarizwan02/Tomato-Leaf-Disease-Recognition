@@ -1,0 +1,10 @@
+source,(binary only),early_blight,healthy,late_blight,leaf_mold,septoria_leaf_spot,yellow_leaf_curl_virus,All,healthy_bin
+brahmanbaria,607,0,428,0,0,0,0,1035,428.0
+nazirpur,629,0,287,0,0,91,0,1007,287.0
+pd_raw,0,33,17,62,36,113,35,296,17.0
+pk_raw,0,77,120,48,149,78,45,517,120.0
+plantdoc,159,39,46,53,51,77,44,469,46.0
+plantvillage,200,150,150,149,149,150,150,1098,150.0
+plantwild,444,312,217,277,228,183,159,1820,217.0
+tomato_village,400,496,216,400,0,0,0,1512,216.0
+All,2439,1107,1481,989,613,692,433,7754,

@@ -59,6 +59,30 @@ confound the perturbation study.) Folder names are matched by keyword; the datas
 | 9 | `09_figures.py` | C | report-ready figures + `robustness_drop.csv` | all |
 | 10 | `10_source_shortcut_check.py` | A | can image size / compression alone predict the class? (source shortcut) | Challenges, Limitations |
 | 11 | `11_repeated_splits.py` | B | 5 repeated grouped splits: mean ± std per model and feature set | Results |
+| 12 | `12_extract_perturbed.py` | A | perturbed features for **all** images: core + extended perturbations + combos, fixed reference mask | Method, Results |
+| 13 | `13_protocol.py` | B | **Phase 1 protocol**: 10 grouped splits (or 5x3 grouped CV), tuning inside each split, every metric as mean ± std, paired tests with Holm, robustness ratios, metadata-only and shortcut-pruned reference rows | Results |
+| 14 | `14_shortcut_controls.py` | A | source clusters, leave-one-cluster-out, feature vs metadata correlations | Challenges, Results |
+| 15 | `15_label_audit.py` | A | most confidently wrong images + confident-learning flags (nothing removed automatically) | Dataset, Challenges |
+
+### Phase 1 (section 15 of the findings log)
+```bash
+python scripts/12_extract_perturbed.py --benchmark 20   # time it first
+python scripts/12_extract_perturbed.py                  # ~50 conditions x all images, resumable
+python scripts/13_protocol.py                           # results/protocol_main/
+python scripts/14_shortcut_controls.py                  # results/shortcut/
+python scripts/15_label_audit.py                        # results/label_audit*.{csv,png}
+python run_pipeline.py variants                         # shortcut controls (a) V1, (d) and V2 -> results_res_matched/,
+                                                        #   results_reencode/, results/protocol_min_side500/
+```
+- **Feature store.** Stage 03 also writes `work/features/clean_all.npy` (every image, manifest order) and stage 12
+  `work/features/perturbed/all/*.npy`, so any split or fold is a row selection. Both record what they were built from
+  (manifest, preprocessing, segmentation, feature settings) and are refused when stale: re-run with `--force`.
+- **Protocol.** Split 0 of `repeated_split` is the committed seed-42 split. Hyper-parameters are tuned inside every
+  split (no reuse of `best_params.json`). Per-image predictions go to `work/protocol_<tag>/predictions.csv.gz`.
+- **Label exclusions.** After inspecting `results/label_audit_top.png`, list confirmed label errors in
+  `data/label_exclusions.csv` (`path,reason`) and re-run stage 01 (the whole source group is dropped), then 03 onwards.
+- **Reference mask.** `perturb_settings.reference_mask: hsv` makes background replacement use one cached mask per image
+  whatever mask the features use (fixes the no-mask run, problem 23). It also applies to stage 06.
 
 ## Run it
 **Local**

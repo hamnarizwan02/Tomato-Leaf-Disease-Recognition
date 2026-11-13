@@ -1,0 +1,31 @@
+seed,split,feature_set,model,n_features,params,val_macro_f1
+42,0,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.6119445154328875
+42,0,all,svm,105,"{'C': 10, 'gamma': 'scale'}",0.5938665593314549
+42,0,all,lr,105,{'C': 1},0.5943518518518519
+43,1,all,rf,105,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.6178903896930462
+43,1,all,svm,105,"{'C': 10, 'gamma': 0.001}",0.7057870051604387
+43,1,all,lr,105,{'C': 0.1},0.6435689894271786
+44,2,all,rf,105,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.5683625730994152
+44,2,all,svm,105,"{'C': 10, 'gamma': 0.001}",0.6199848429579392
+44,2,all,lr,105,{'C': 0.1},0.5805581141209456
+45,3,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.5277092711903273
+45,3,all,svm,105,"{'C': 100, 'gamma': 0.001}",0.6442919849636267
+45,3,all,lr,105,{'C': 1},0.640925676850511
+46,4,all,rf,105,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.6296212280937138
+46,4,all,svm,105,"{'C': 10, 'gamma': 'scale'}",0.6362416434880203
+46,4,all,lr,105,{'C': 0.1},0.5861891887139827
+47,5,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.6399946225717551
+47,5,all,svm,105,"{'C': 1, 'gamma': 'scale'}",0.6454496836257955
+47,5,all,lr,105,{'C': 0.1},0.6535537271257387
+48,6,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.641029341029341
+48,6,all,svm,105,"{'C': 10, 'gamma': 'scale'}",0.6135986944529731
+48,6,all,lr,105,{'C': 0.1},0.6162638754528315
+49,7,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.590624114447644
+49,7,all,svm,105,"{'C': 100, 'gamma': 0.001}",0.615170293473765
+49,7,all,lr,105,{'C': 0.01},0.589365896668128
+50,8,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.6546344800886432
+50,8,all,svm,105,"{'C': 10, 'gamma': 0.001}",0.7194338084502019
+50,8,all,lr,105,{'C': 1},0.6316207609546187
+51,9,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.6197388690121248
+51,9,all,svm,105,"{'C': 10, 'gamma': 0.001}",0.6318185053040989
+51,9,all,lr,105,{'C': 0.1},0.5785981016477469

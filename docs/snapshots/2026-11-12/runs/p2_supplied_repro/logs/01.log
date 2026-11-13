@@ -1,0 +1,18 @@
+Hashing 7200 images to cluster near-duplicates (reads every file once) ...
+near-duplicate pairs: 2693 (61 across different classes = label noise). groups 1869 -> 1516; largest group: 36 images
+WARNING: 133 source photos appear in more than one split (19.9% of images). Test scores will be inflated. Use dataset.split_strategy: group.
+Wrote F:\NUST\ML\runs\p2_supplied_repro\work\manifest_supplied.csv  (7200 images, 1516 source photos)
+split                   train  val  test
+label                                   
+early_blight              840  240   120
+healthy                   840  240   120
+late_blight               840  240   120
+leaf_mold                 840  240   120
+septoria_leaf_spot        840  240   120
+yellow_leaf_curl_virus    840  240   120
+Building image cache (7200 images -> 256x256) ...
+Saved F:\NUST\ML\runs\p2_supplied_repro\work\images_cache.npy  (1.42 GB)
+
+real	2m39.747s
+user	0m0.031s
+sys	0m0.031s
