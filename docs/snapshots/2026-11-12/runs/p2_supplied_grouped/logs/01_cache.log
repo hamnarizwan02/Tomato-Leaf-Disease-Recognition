@@ -1,0 +1,6 @@
+Building image cache (7017 images -> 256x256) ...
+Saved F:\NUST\ML\runs\p2_supplied_grouped\work\images_cache.npy  (1.38 GB)
+
+real	0m28.756s
+user	0m0.000s
+sys	0m0.047s

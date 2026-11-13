@@ -1,0 +1,239 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{graphicx,booktabs,cite,amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\begin{document}
+\title{Which Leaf Features Survive a Change of Camera? Multi-Source Evaluation and Feature-Level Explanation of Classical Tomato-Disease Classifiers}
+\author{\IEEEauthorblockN{Hamna Sadia Rizwan}\IEEEauthorblockA{School of Electrical Engineering and Computer Science (SEECS), NUST, Islamabad, Pakistan} \and \IEEEauthorblockN{Maria Ilyas Malik}\IEEEauthorblockA{School of Electrical Engineering and Computer Science (SEECS), NUST, Islamabad, Pakistan} \and \IEEEauthorblockN{Manahil Kamran}\IEEEauthorblockA{School of Electrical Engineering and Computer Science (SEECS), NUST, Islamabad, Pakistan}}
+\maketitle
+\begin{abstract}
+Classical tomato-disease classifiers are usually evaluated within one dataset. We pool eight de-duplicated image sources (7,754 images: field photographs from Pakistan, India and Bangladesh, web images and laboratory images) and evaluate random forest, SVM and logistic regression by leave-one-source-out. We compare three feature arms under identical classical training: hand-crafted and leaf-relative lesion formulas, k-means colour and texture words, and frozen deep extractors (CLIP, ResNet-50) used without any training. Related near-duplicate images inflate a single-source benchmark from 0.66 to 0.96 accuracy, and single-source models collapse on other sources. With pooled training, healthy-versus-diseased balanced accuracy on an unseen source is 0.66 with formula features and 0.75 with CLIP concept scores, but six-class macro-F1 is only 0.33 with formula or k-means features and 0.52 with CLIP embeddings. A model-free criterion - a feature's effect must have the same sign and a bootstrap interval excluding zero on at least 6 of 7 sources - finds 24 of 205 named features stable, mainly leaf-relative yellow, non-green and lesion-size measurements and k-means brown/olive colour words. Random-forest importance does not recover them, and a glass-box concept model relies partly on capture context. Feature-level stability across sources is a practical basis for explaining classical plant-disease models.
+\end{abstract}
+\begin{IEEEkeywords}
+plant disease recognition, domain shift, leave-one-source-out, hand-crafted features, bag of visual words, explainability, near-duplicate leakage
+\end{IEEEkeywords}
+\section{Introduction}
+Image-based recognition of tomato leaf diseases is usually benchmarked on laboratory photographs, most often PlantVillage~\cite{r1}, where single leaves lie on a plain background. Accuracies close to 100\% are routinely reported~\cite{r2,r3}, yet the same models lose most of their accuracy on photographs taken under other conditions~\cite{r2,r3,r5}. Lightweight classical pipelines - segmentation, hand-crafted colour, texture and shape features, and a random forest (RF), support vector machine (SVM) or logistic regression (LR) - remain attractive for low-resource deployment because they are cheap and their inputs are named, measurable quantities~\cite{r13,r18}-~\cite{r21}. That second property suggests an explanation that does not depend on a particular model: if a feature truly reflects disease, its relation to the label should hold whatever camera, field or website the image came from.
+
+We started from 813 field photographs of six tomato classes from Pakistan and found two problems that together make single-dataset results uninformative. First, near-duplicate and rotated copies of the same leaf inflate image-level splits: on the supplied 7,200-image augmented set, an RF scores 0.96 accuracy with a random split but 0.66 when copies of one photograph are kept together. Second, models trained on one source fail on others (macro-F1 0.21-0.33 on PlantDoc and a Bangladeshi field set), and their feature-importance explanations collapse with them. We therefore pool eight public and private image sources and ask three questions:
+
+\begin{itemize}\item \textbf{RQ1} How well do classical models trained on several sources recognise disease on a source they have never seen (leave-one-source-out, LOSO)?\item \textbf{RQ2} How large is the gap between seen-source and unseen-source performance, and does it depend on how the features were obtained: by formula, by a classical learned extractor (k-means visual words), or by a frozen deep network?\item \textbf{RQ3} Which individual features keep the same, statistically reliable relation to disease across sources, and does restricting a model to those features improve transfer?\end{itemize}
+All classifiers are classical (RF, SVM, LR). Deep networks appear only as frozen feature extractors, so the comparison isolates the representation. Our contributions are (i) a de-duplicated eight-source tomato benchmark with a grouped LOSO protocol, (ii) a matched comparison of formula, k-means and frozen deep features under identical classical training, and (iii) a model-free, source-stability criterion for feature-level explanation, checked against glass-box and permutation-importance explanations.
+
+\section{Related Work}
+\subsection{Laboratory versus field data}
+Mohanty et al.~\cite{r2} reached 99.35\% on held-out PlantVillage images but about 31\% on images from other sources; Ferentinos~\cite{r3} and Barbedo~\cite{r4} report the same pattern and attribute it to covariate shift and background. Noyan~\cite{r5} classified PlantVillage far above chance from eight background pixels, a direct sign of capture bias. Field collections followed: PlantDoc~\cite{r6}, Tomato-Village~\cite{r7}, PlantWild~\cite{r8} and recent regional sets from Pakistan~\cite{r9} and Bangladesh~\cite{r10}-~\cite{r12}. Each is normally evaluated within itself.
+
+\subsection{Classical features}
+Classical pipelines describe texture with co-occurrence statistics~\cite{r14} and local binary patterns~\cite{r15}, colour with moments and histograms, and classify with SVMs~\cite{r16} or random forests~\cite{r17}; tomato-specific examples include Gabor features~\cite{r18}, SIFT-based texture~\cite{r19} and comparisons with CNNs~\cite{r20,r21}. Bag-of-visual-words models~\cite{r52,r53} learn colour and texture prototypes with k-means~\cite{r54,r55} instead of fixing them by formula.
+
+\subsection{Distribution shift, shortcuts and leakage}
+Datasets carry their own signatures~\cite{r23}, and leave-domain-out evaluation shows that many domain-generalisation methods do not beat plain training~\cite{r24,r25}. Shortcut learning~\cite{r29} and source-specific signals in medical imaging~\cite{r30,r31} show that external accuracy alone does not prove a model uses the pathology. Duplicates across training and test sets are a common leakage route~\cite{r32,r33}, and grouped splitting is the remedy for structured data~\cite{r34}.
+
+\subsection{Explaining models and features}
+Impurity importance is biased~\cite{r36}, permutation importance extrapolates under correlated features~\cite{r37}, and importance changes across equally good models~\cite{r38}; local explainers disagree~\cite{r39}-~\cite{r41}. Rudin~\cite{r42} argues for inherently interpretable models. Concept-based methods express a model through named concepts~\cite{r44,r45}, and CLIP~\cite{r46} makes concept scores available without concept labels~\cite{r47,r48}. Toda and Okura~\cite{r43} visualised a PlantVillage CNN but on one laboratory dataset. We instead define explanation at the level of features and require it to replicate across sources.
+
+\section{Data}
+Table I lists the eight sources. Our own 813 photographs were compared with PlantDoc by content; 296 (36\%) are identical or near-identical to PlantDoc images, so the raw set is split into \emph{pd\_raw} (with a PlantDoc copy) and \emph{pk\_raw} (without). Tomato-Village is the field variant (a); PlantVillage is a seeded sample of 150 images per class. Brahmanbaria images are leaf crops from its detection boxes. Classes outside the six (bacterial spot, mosaic, spider mites, leaf miner, spotted wilt, other Bangladeshi disease folders) and uncertain mappings enter the healthy-versus-diseased task only.
+
+\textbf{Cross-source de-duplication.} Every image is reduced to a 16x16 grey thumbnail; two images are duplicates if the Pearson correlation of the thumbnails is at least 0.95 under any of the eight rotations and flips, or if their bytes are identical. The threshold was fixed on the raw set before this study. Of 8,196 scanned images, 425 cross-source duplicates were dropped (277 PlantDoc, 146 PlantWild, 2 PlantVillage), keeping the copy in the higher-priority source; 72 pairs carry different labels and are recorded for review. Within a source, duplicates form groups that are never split; 7,754 images in 6,967 groups remain (largest group 12).
+
+\begin{table}[t]
+\centering
+\caption{Image sources after cross-source de-duplication. Classes: six-class labels present + extra disease classes used only in the binary task.}
+\label{tab:sources}
+\footnotesize
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Source} & \textbf{Origin} & \textbf{Images} & \textbf{Healthy} & \textbf{Classes} \\
+\midrule
+PK raw & Own field photos, Pakistan & 517 & 120 & 6 \\
+PD raw & Own photos also in PlantDoc & 296 & 17 & 6 \\
+PlantDoc & Web images~\cite{r6} & 469 & 46 & 6 + 3 \\
+PlantWild & Web, in the wild~\cite{r8} & 1820 & 217 & 6 + 2 \\
+T.-Village & Field, Rajasthan~\cite{r7} & 1512 & 216 & 3 + 2 \\
+Nazirpur & Field, Bangladesh~\cite{r10} & 1007 & 287 & 2 + bin \\
+Brahmanb. & Field crops, Bangladesh~\cite{r11} & 1035 & 428 & bin \\
+PlantVillage & Laboratory~\cite{r1} & 1098 & 150 & 6 + 4 \\
+Total &  & 7754 & 1481 &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+\section{Methods}
+\subsection{Features}
+All features except the deep ones are computed on a 256x256 copy of each image inside an HSV hue-gate leaf mask. \textbf{Formula arm.} \emph{Hand}: 105 features (47 colour moments and histograms, 38 LBP and GLCM texture, 20 shape). \emph{Lesion}: 20 leaf-relative features designed to be insensitive to camera colour: yellow, brown, dark, pale and non-green fractions of the leaf; lesion-minus-healthy-tissue differences in CIELAB; chromaticity statistics; spot density, size and circularity relative to the leaf. \textbf{K-means arm.} From 1,500 sampled leaf pixels per image, a CIELAB colour descriptor and an 8-d filter-bank texture descriptor (Sobel and Laplacian-of-Gaussian magnitudes at two scales, local standard deviation) are quantised with MiniBatch k-means into 24 colour words and 32 textons; an image is the share of its pixels nearest each word. In LOSO the codebooks are re-learned in every fold from the training sources only. \textbf{Deep arm (frozen).} CLIP ViT-B/32~\cite{r46,r49} image embeddings (512-d); 24 named concept scores, the cosine similarity of the embedding with fixed text prompts (14 symptoms, 10 context or shortcut cues such as plain background, hand, blur and watermark), fixed before any score was seen; and ImageNet ResNet-50~\cite{r50} pooled features (2,048-d, PCA to 256 inside each fold). No network is trained or fine-tuned.
+
+\subsection{Classifiers and protocols}
+RF (300 trees), RBF SVM and LR, all with balanced class weights and standardised inputs, with small fixed grids. Hyper-parameters are chosen on a validation set of 15\% of every training source (grouped) and the model is refit on training plus validation. \textbf{LOSO}: train on seven sources, test on the eighth; nothing is tuned on it. \textbf{Seen-source reference}: the pooled data are split 70/15/15 within each source (grouped), five seeds, and scored per source. The \textbf{transfer gap} is seen minus LOSO. Task T1 is healthy versus diseased (balanced accuracy, AUC, healthy recall); task T2 is the six classes, scored with macro-F1 over the classes present in the held-out source. Every source counts once. Feature sets are compared with paired Wilcoxon signed-rank tests over held-out sources with Holm correction.
+
+\subsection{Feature-level explanation}
+For each feature and each source with at least 30 healthy and 30 diseased images, the effect is AUC - 0.5 of the feature alone for diseased versus healthy, with a 1,000-resample stratified bootstrap 95\% interval. A feature is \textbf{source-stable} if its interval excludes zero with the majority sign in at least 75\% of eligible sources. This criterion uses no classifier. We relate it to three model-based views: the sign stability of L1-regularised LR coefficients across LOSO folds (glass box), RF permutation importance measured on the held-out source, and \textbf{explanation-guided selection}, in which source-stable features are identified from the training sources only and the models are refit on them before scoring the held-out source.
+
+\section{Results}
+\subsection{Single-source baseline}
+On our own photographs, grouping near-duplicates lowers RF accuracy on the supplied augmented set from 0.96 (random image-level split; 98.7\% of test images have a relative in training) to 0.66 +/- 0.06 (grouped split, 10 seeds). Trained on our raw set alone, the models reach macro-F1 0.29-0.33 on independent PlantDoc images and 0.21-0.25 on Nazirpur, and recognise only 3-17\% of healthy Brahmanbaria leaves. This motivates the multi-source design.
+
+\subsection{Unseen-source performance by extractor arm (RQ1, RQ2)}
+\begin{table}[t]
+\centering
+\caption{Logistic regression, unseen source (U, LOSO) vs seen sources (S), mean over held-out sources; gap = S - U. T1: balanced accuracy, healthy vs diseased (8 sources; chance 0.5). T2: macro-F1 over the classes present (7 sources). Rows 1-3 formula, 4-6 k-means, 7 combined, 8-10 frozen deep. Fig. 1 shows the best of RF, SVM and LR per set.}
+\label{tab:loso}
+\footnotesize
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Features} & \textbf{T1 U} & \textbf{T1 S} & \textbf{T1 gap} & \textbf{T2 U} & \textbf{T2 S} & \textbf{T2 gap} \\
+\midrule
+Hand (105) & 0.65 & 0.81 & 0.16 & 0.30 & 0.52 & 0.23 \\
+Lesion (20) & 0.65 & 0.73 & 0.08 & 0.25 & 0.39 & 0.14 \\
+Hand + lesion & 0.66 & 0.82 & 0.16 & 0.33 & 0.55 & 0.22 \\
+Colour words (24) & 0.62 & 0.71 & 0.09 & 0.25 & 0.39 & 0.14 \\
+Textons (32) & 0.54 & 0.61 & 0.08 & 0.20 & 0.31 & 0.11 \\
+Colour words + textons & 0.59 & 0.74 & 0.14 & 0.26 & 0.45 & 0.19 \\
+Hand + lesion + k-means & 0.65 & 0.83 & 0.18 & 0.33 & 0.57 & 0.24 \\
+CLIP concepts (24) & 0.75 & 0.82 & 0.07 & 0.47 & 0.57 & 0.10 \\
+CLIP embedding (512) & 0.72 & 0.91 & 0.19 & 0.52 & 0.75 & 0.23 \\
+ResNet-50 (PCA 256) & 0.67 & 0.85 & 0.18 & 0.45 & 0.68 & 0.23 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{p3_arms_loso_vs_seen.png}
+\caption{Best classifier per feature set: mean over held-out sources (bars) and the same model on seen sources (ticks). Colour = extractor arm.}
+\label{fig:arms}
+\end{figure}
+Training on seven sources and testing on the eighth, the formula arm reaches a balanced accuracy of 0.66 (LR, hand + lesion) for healthy versus diseased, against 0.82 on seen sources. The k-means colour words are lower (0.62) but the most even across sources (SD 0.04) and lose the least (0.09). Among the frozen deep extractors, the 24 CLIP concept scores give the best unseen-source result (0.75, seen 0.82), higher than hand features on 8 of 8 held-out sources (Wilcoxon p = 0.008, Holm-adjusted 0.07); the CLIP embedding reaches 0.72 and ResNet-50 0.67, close to the formula features. Linear models transfer best: with hand + lesion features the RF scores 0.58 unseen and 0.83 seen, and it rarely predicts healthy on a new source (healthy recall 0.22 vs 0.57 for LR).
+
+Six-class diagnosis is where the arms separate. Formula and k-means features reach at most 0.33 macro-F1 on an unseen source (Hand + lesion + k-means, LR; seen 0.57); hand + lesion features with LR beat hand features on 7 of 7 sources (Holm-adjusted p = 0.14). The frozen deep embeddings transfer clearly better: CLIP embedding 0.52 (seen 0.75), CLIP concepts 0.47 and ResNet-50 0.45 with LR, each above hand features on 6-7 of 7 sources (Wilcoxon p = 0.016-0.047; not significant after Holm correction with only 7 sources). The 24 CLIP concepts lose the least between seen and unseen sources (0.10).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{p3_heatmap_bin.png}
+\caption{Healthy vs diseased, per held-out source, best set of each arm.}
+\label{fig:heat}
+\end{figure}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{p3_heatmap_six.png}
+\caption{Six classes (macro-F1 over the classes present), per held-out source, best set of each arm.}
+\label{fig:heat6}
+\end{figure}
+Performance depends strongly on the held-out source (Fig. 2). Nazirpur is the hardest for the formula features (0.49); a domain classifier separates it from our photographs with AUC 0.98.
+
+\subsection{Feature-level explanation (RQ3)}
+Of 205 named features, 24 are source-stable (Table III, Fig. 4). Leaf-relative lesion features are the most reliable family (8 of 20): the yellow and non-green fractions of the leaf, the lesion-minus-tissue shift in b* and the size of the largest spot are higher in diseased leaves on all seven eligible sources. Of the 105 hand features only 7 qualify, chiefly the yellow-orange hue share. The k-means codebook, learned without labels, isolates the same signal in a form that can be shown rather than defined: its stable words are browns, olives, ochres and near-black (Fig. 5), while the green words have negative effects that are not stable. Only one CLIP concept is stable.
+
+\begin{table}[t]
+\centering
+\caption{Source-stable features (CI excludes 0 with the majority sign in at least 6 of 7 eligible sources), healthy vs diseased.}
+\label{tab:stable}
+\footnotesize
+\begin{tabular}{lcc}
+\toprule
+\textbf{Family} & \textbf{Stable} & \textbf{Examples} \\
+\midrule
+Hand (formula) & 7 / 105 & yellow-orange hue share (+), green-red skew (-), 3 LBP bins, GLCM correlation \\
+Lesion (formula) & 8 / 20 & yellow and non-green fraction, lesion b* shift, largest spot (all +, 7/7 sources) \\
+K-means words & 8 / 56 & 7 brown/olive/ochre colour words (+), 1 texton (-) \\
+CLIP concepts & 1 / 24 & miner trails (-) \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{p3_stable_features.png}
+\caption{Per-source effect (AUC - 0.5) of the most source-stable features; hollow = 95\% CI includes 0.}
+\label{fig:stable}
+\end{figure}
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{p3_colour_words.png}
+\caption{The 24 k-means colour words as swatches, ordered by signed median effect; below: effect and share of sources where it is significant with the majority sign.}
+\label{fig:words}
+\end{figure}
+Model-based explanations do not recover this set. The Spearman correlation between RF permutation importance on the held-out source and feature stability ranges from -0.22 to 0.16 across folds. The L1-LR on CLIP concepts, the strongest unseen-source model, keeps sign-stable weights on 4 context concepts in every LOSO fold - plain background (towards healthy), in hand and studio (towards diseased) - alongside symptom concepts such as necrotic edges and target spots. Part of its advantage comes from capture context that happens to be shared between sources, not from symptoms.
+
+\begin{table}[t]
+\centering
+\caption{Explanation-guided selection: LOSO balanced accuracy with all features vs only the features found source-stable on the training sources.}
+\label{tab:sel}
+\footnotesize
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Pool} & \textbf{L1-LR all} & \textbf{L1-LR stable} & \textbf{RF all} & \textbf{RF stable} \\
+\midrule
+Formula & 0.64 & 0.63 & 0.58 & 0.57 \\
+K-means & 0.60 & 0.61 & 0.56 & 0.56 \\
+Formula + k-means & 0.64 & 0.62 & 0.56 & 0.58 \\
+CLIP concepts & 0.76 & 0.57 & 0.66 & 0.51 \\
+\bottomrule
+\end{tabular}
+\end{table}
+Restricting models to stable features does not improve transfer (Table IV): formula L1-LR 0.64 to 0.63, k-means 0.60 to 0.61, and CLIP concepts lose 0.18 because the context concepts carry transferable signal. Stability identifies which features mean the same thing everywhere; the other features still add predictive, if less interpretable, information.
+
+\section{Discussion}
+Three points stand out. First, pooling sources is what makes classical models transfer at all: unseen-source balanced accuracy of about 0.66 with formula features, against near-collapse when training on one source. Second, the two learned extractors behave differently. The k-means words transfer about as well as the formulas and add no accuracy, but they make the colour signal visible. Frozen deep features help little for healthy versus diseased (except the concept scores, which partly use context) but substantially for six-class diagnosis, where hand-crafted colour and texture statistics cannot separate diseases across cameras; the gap between seen and unseen sources remains for every arm. Third, feature-level explanation is possible and informative when it is required to replicate across sources: a short list of leaf-relative yellowing, browning and lesion-size measurements behaves the same way on laboratory, web and field images from three countries, which a model's importance ranking does not reveal. Accuracy and interpretability therefore pull apart: the most transferable diagnostic representation (a 512-d embedding) is the least interpretable.
+
+\textbf{Limitations.} Labels come from different annotators and protocols; 72 cross-source label conflicts were recorded but not resolved. 'Diseased' mixes different diseases per source. Sources differ in size and class mix, and several contribute only some classes. The HSV leaf mask is heuristic and is not used by the deep extractors, which see the whole image; this favours context cues. Only frozen, generic deep extractors were tested, and the explanation analysis covers the healthy-versus-diseased task only.
+
+\section{Conclusion}
+On a de-duplicated eight-source tomato benchmark with leave-one-source-out evaluation, classical models recognise disease on an unseen source with balanced accuracy of about 0.65-0.75. Six-class diagnosis transfers poorly with formula or k-means features (macro-F1 about 0.33) and moderately with frozen CLIP embeddings (about 0.52). A model-free stability criterion identifies a small set of named features - leaf-relative yellow, brown and non-green fractions, lesion size and k-means brown/olive colour words - whose relation to disease holds across sources. We recommend reporting unseen-source results and source-stable features alongside within-dataset accuracy.
+
+\begin{thebibliography}{99}
+\bibitem{r1} D. P. Hughes and M. Salathé, "An open access repository of images on plant health to enable the development of mobile disease diagnostics," arXiv:1511.08060, 2015.
+\bibitem{r2} S. P. Mohanty, D. P. Hughes, and M. Salathé, "Using deep learning for image-based plant disease detection," Frontiers in Plant Science, vol. 7, art. 1419, 2016, doi:10.3389/fpls.2016.01419.
+\bibitem{r3} K. P. Ferentinos, "Deep learning models for plant disease detection and diagnosis," Computers and Electronics in Agriculture, vol. 145, pp. 311--318, 2018.
+\bibitem{r4} J. G. A. Barbedo, "Factors influencing the use of deep learning for plant disease recognition," Biosystems Engineering, vol. 172, pp. 84--91, 2018, doi:10.1016/j.biosystemseng.2018.05.013.
+\bibitem{r5} M. A. Noyan, "Uncovering bias in the PlantVillage dataset," arXiv:2206.04374, 2022.
+\bibitem{r6} D. Singh, N. Jain, P. Jain, P. Kayal, S. Kumawat, and N. Batra, "PlantDoc: A dataset for visual plant disease detection," in Proc. ACM IKDD CoDS and COMAD, 2020, pp. 249--253, doi:10.1145/3371158.3371196.
+\bibitem{r7} M. Gehlot, R. K. Saxena, and G. C. Gandhi, "'Tomato-Village': a dataset for end-to-end tomato disease detection in a real-world environment," Multimedia Systems, vol. 29, pp. 3305--3328, 2023, doi:10.1007/s00530-023-01158-y.
+\bibitem{r8} T. Wei, Z. Chen, Z. Huang, and X. Yu, "Benchmarking in-the-wild multimodal disease recognition and a versatile baseline," in Proc. 32nd ACM Int. Conf. Multimedia (MM '24), 2024, pp. 1593--1601, doi:10.1145/3664647.3680599.
+\bibitem{r9} M. N. Malik, S. H. Ali, and H. Ali, "Tomato leaf disease classification dataset in Pakistan," Mendeley Data, v2, 2026, doi:10.17632/3mbnb82mxd.2.
+\bibitem{r10} P. Bapari, M. Z. R. Zitu, and M. Ummehani, "A high-resolution image dataset of tomato (Solanum lycopersicum) leaves for multi-class disease detection and classification from Bangladesh," Mendeley Data, v1, 2025, doi:10.17632/74zvtzx9pr.1.
+\bibitem{r11} M. K. Oni and T. T. Prama, "A comprehensive dataset of tomato leaf images for disease analysis in Bangladesh," Data in Brief, 2025; data: "Tomato leaf image dataset for disease analysis in real-world environment," Mendeley Data, v1, 2024, doi:10.17632/rnbsw72zb5.1.
+\bibitem{r12} A. Imtiaz, F. B. I. Swapnil, S. R. Masud, and D. Karmaker, "Tomato leaf dataset: A dataset for multiclass disease detection and classification," Data in Brief, 2025, doi:10.1016/j.dib.2025.111520; data: Mendeley Data, doi:10.17632/bpfd9cns5g.2.
+\bibitem{r13} J. G. A. Barbedo, "Digital image processing techniques for detecting, quantifying and classifying plant diseases," SpringerPlus, vol. 2, art. 660, 2013, doi:10.1186/2193-1801-2-660.
+\bibitem{r14} R. M. Haralick, K. Shanmugam, and I. Dinstein, "Textural features for image classification," IEEE Trans. Systems, Man, and Cybernetics, vol. SMC-3, no. 6, pp. 610--621, 1973.
+\bibitem{r15} T. Ojala, M. Pietikäinen, and T. Mäenpää, "Multiresolution gray-scale and rotation invariant texture classification with local binary patterns," IEEE Trans. Pattern Anal. Mach. Intell., vol. 24, no. 7, pp. 971--987, 2002.
+\bibitem{r16} C. Cortes and V. Vapnik, "Support-vector networks," Machine Learning, vol. 20, pp. 273--297, 1995.
+\bibitem{r17} L. Breiman, "Random forests," Machine Learning, vol. 45, pp. 5--32, 2001.
+\bibitem{r18} U. Mokhtar, M. A. S. Ali, A. E. Hassanien, and H. Hefny, "Tomato leaves diseases detection approach based on support vector machines," in Proc. 11th Int. Computer Engineering Conf. (ICENCO), 2015, doi:10.1109/ICENCO.2015.7416356.
+\bibitem{r19} C. S. Hlaing and S. M. M. Zaw, "Tomato plant diseases classification using statistical texture feature and color feature," in Proc. IEEE/ACIS 17th Int. Conf. Computer and Information Science (ICIS), 2018, pp. 439--444, doi:10.1109/ICIS.2018.8466483.
+\bibitem{r20} L. Tan, J. Lu, and H. Jiang, "Tomato leaf diseases classification based on leaf images: A comparison between classical machine learning and deep learning methods," AgriEngineering, vol. 3, no. 3, pp. 542--558, 2021, doi:10.3390/agriengineering3030035.
+\bibitem{r21} V. Singh and A. K. Misra, "Detection of plant leaf diseases using image segmentation and soft computing techniques," Information Processing in Agriculture, vol. 4, no. 1, pp. 41--49, 2017.
+\bibitem{r22} D. Hendrycks and T. Dietterich, "Benchmarking neural network robustness to common corruptions and perturbations," in Proc. ICLR, 2019.
+\bibitem{r23} A. Torralba and A. A. Efros, "Unbiased look at dataset bias," in Proc. IEEE CVPR, 2011, pp. 1521--1528.
+\bibitem{r24} I. Gulrajani and D. Lopez-Paz, "In search of lost domain generalization," in Proc. ICLR, 2021.
+\bibitem{r25} P. W. Koh et al., "WILDS: A benchmark of in-the-wild distribution shifts," in Proc. ICML, PMLR 139, 2021, pp. 5637--5664.
+\bibitem{r26} G. Buchsbaum, "A spatial processor model for object colour perception," J. Franklin Institute, vol. 310, no. 1, pp. 1--26, 1980.
+\bibitem{r27} K. Zuiderveld, "Contrast limited adaptive histogram equalization," in Graphics Gems IV, Academic Press, 1994, pp. 474--485.
+\bibitem{r28} C. Shorten and T. M. Khoshgoftaar, "A survey on image data augmentation for deep learning," J. Big Data, vol. 6, art. 60, 2019.
+\bibitem{r29} R. Geirhos et al., "Shortcut learning in deep neural networks," Nature Machine Intelligence, vol. 2, pp. 665--673, 2020.
+\bibitem{r30} J. R. Zech et al., "Variable generalization performance of a deep learning model to detect pneumonia in chest radiographs: A cross-sectional study," PLoS Medicine, vol. 15, no. 11, e1002683, 2018.
+\bibitem{r31} A. J. DeGrave, J. D. Janizek, and S.-I. Lee, "AI for radiographic COVID-19 detection selects shortcuts over signal," Nature Machine Intelligence, vol. 3, pp. 610--619, 2021, doi:10.1038/s42256-021-00338-7.
+\bibitem{r32} S. Kapoor and A. Narayanan, "Leakage and the reproducibility crisis in machine-learning-based science," Patterns, vol. 4, no. 9, art. 100804, 2023, doi:10.1016/j.patter.2023.100804.
+\bibitem{r33} B. Barz and J. Denzler, "Do we train on test data? Purging CIFAR of near-duplicates," J. Imaging, vol. 6, no. 6, art. 41, 2020, doi:10.3390/jimaging6060041.
+\bibitem{r34} D. R. Roberts et al., "Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure," Ecography, vol. 40, no. 8, pp. 913--929, 2017, doi:10.1111/ecog.02881.
+\bibitem{r35} C. G. Northcutt, L. Jiang, and I. L. Chuang, "Confident learning: Estimating uncertainty in dataset labels," J. Artificial Intelligence Research, vol. 70, pp. 1373--1411, 2021.
+\bibitem{r36} C. Strobl, A.-L. Boulesteix, A. Zeileis, and T. Hothorn, "Bias in random forest variable importance measures: Illustrations, sources and a solution," BMC Bioinformatics, vol. 8, art. 25, 2007.
+\bibitem{r37} G. Hooker, L. Mentch, and S. Zhou, "Unrestricted permutation forces extrapolation: Variable importance requires at least one more model, or there is no free variable importance," Statistics and Computing, vol. 31, art. 82, 2021, doi:10.1007/s11222-021-10057-z.
+\bibitem{r38} A. Fisher, C. Rudin, and F. Dominici, "All models are wrong, but many are useful: Learning a variable's importance by studying an entire class of prediction models simultaneously," J. Machine Learning Research, vol. 20, no. 177, pp. 1--81, 2019.
+\bibitem{r39} M. T. Ribeiro, S. Singh, and C. Guestrin, "'Why should I trust you?': Explaining the predictions of any classifier," in Proc. ACM SIGKDD, 2016, pp. 1135--1144.
+\bibitem{r40} S. M. Lundberg and S.-I. Lee, "A unified approach to interpreting model predictions," in Proc. NeurIPS, 2017.
+\bibitem{r41} S. Krishna et al., "The disagreement problem in explainable machine learning: A practitioner's perspective," arXiv:2202.01602, 2022 (TMLR, 2024).
+\bibitem{r42} C. Rudin, "Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead," Nature Machine Intelligence, vol. 1, pp. 206--215, 2019.
+\bibitem{r43} Y. Toda and F. Okura, "How convolutional neural networks diagnose plant disease," Plant Phenomics, vol. 2019, art. 9237136, 2019, doi:10.34133/2019/9237136.
+\bibitem{r44} B. Kim et al., "Interpretability beyond feature attribution: Quantitative testing with concept activation vectors (TCAV)," in Proc. ICML, PMLR 80, 2018, pp. 2668--2677.
+\bibitem{r45} P. W. Koh et al., "Concept bottleneck models," in Proc. ICML, PMLR 119, 2020, pp. 5338--5348.
+\bibitem{r46} A. Radford et al., "Learning transferable visual models from natural language supervision," in Proc. ICML, PMLR 139, 2021, pp. 8748--8763.
+\bibitem{r47} T. Oikarinen, S. Das, L. M. Nguyen, and T.-W. Weng, "Label-free concept bottleneck models," in Proc. ICLR, 2023.
+\bibitem{r48} Y. Yang, A. Panagopoulou, S. Zhou, D. Jin, C. Callison-Burch, and M. Yatskar, "Language in a bottle: Language model guided concept bottlenecks for interpretable image classification," in Proc. IEEE/CVF CVPR, 2023, pp. 19187--19197.
+\bibitem{r49} G. Ilharco et al., "OpenCLIP," Zenodo, 2021, doi:10.5281/zenodo.5143773.
+\bibitem{r50} K. He, X. Zhang, S. Ren, and J. Sun, "Deep residual learning for image recognition," in Proc. IEEE CVPR, 2016, pp. 770--778.
+\bibitem{r51} F. Pedregosa et al., "Scikit-learn: Machine learning in Python," J. Machine Learning Research, vol. 12, pp. 2825--2830, 2011.
+\bibitem{r52} G. Csurka, C. R. Dance, L. Fan, J. Willamowski, and C. Bray, "Visual categorization with bags of keypoints," in Proc. ECCV Workshop on Statistical Learning in Computer Vision, 2004.
+\bibitem{r53} M. Varma and A. Zisserman, "A statistical approach to texture classification from single images," Int. J. Computer Vision, vol. 62, pp. 61--81, 2005.
+\bibitem{r54} D. Arthur and S. Vassilvitskii, "k-means++: The advantages of careful seeding," in Proc. ACM-SIAM SODA, 2007, pp. 1027--1035.
+\bibitem{r55} D. Sculley, "Web-scale k-means clustering," in Proc. WWW, 2010, pp. 1177--1178.
+\end{thebibliography}
+\end{document}

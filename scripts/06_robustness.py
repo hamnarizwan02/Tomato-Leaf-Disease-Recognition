@@ -17,10 +17,10 @@ import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
 from src.config import load_config  # noqa: E402
-from src.data import cache_file, load_cache, load_manifest, split_indices  # noqa: E402
+from src.data import cache_file, ensure_ref_masks, load_cache, load_manifest, split_indices  # noqa: E402
 from src.evaluate import compute_metrics  # noqa: E402
 from src.features import (FEATURE_SETS, columns_for_set, extract_matrix, load_clean_features,  # noqa: E402
-                          perturbed_dir, worker_cfg)
+                          load_perturbed_all, perturbed_dir, worker_cfg)
 from src.models import make_model  # noqa: E402
 from src.perturb import all_conditions, condition_name  # noqa: E402
 from src.utils import Timer, load_json, set_seed  # noqa: E402
@@ -54,8 +54,11 @@ def main():
             cols = columns_for_set(names, sname)
             fitted[(mname, sname)] = (make_model(mname, best[mname], cfg).fit(Xtv[:, cols], ytv), cols)
 
+    ensure_ref_masks(cfg, df)
     sub = worker_cfg(cfg)
     pdir = perturbed_dir(cfg)
+    # reuse the all-image matrices from scripts/12 when they exist (same extraction, test rows sliced out)
+    pall = load_perturbed_all(cfg, df, [condition_name(k, v) for k, v in all_conditions(cfg)])
     conds = [("clean", "none")] + all_conditions(cfg)
     rows, cond_rows = [], []
     for kind, level in conds:
@@ -64,7 +67,10 @@ def main():
             Xt = X["test"]
         else:
             f = pdir / f"{name}.npy"
-            if f.exists() and not args.force:
+            if name in pall and not args.force:
+                Xt = np.asarray(pall[name][idx["test"]])
+                np.save(f, Xt)
+            elif f.exists() and not args.force:
                 Xt = np.load(f)
             else:
                 t0 = time.time()

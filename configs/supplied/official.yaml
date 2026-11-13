@@ -1,0 +1,11 @@
+# Supplied-split benchmark (verified_results §10), recreated: the supplied Augmented Dataset with its own
+# train/val/test folders. Used to check that a new environment reproduces RF 0.812 / SVM 0.815 / LR 0.696.
+# Set TOMATO_DATA_ROOT to ".../Tomato Dataset/Augmented Dataset" and give the run its own work/results/manifest.
+dataset:
+  split_strategy: official
+duplicates:
+  drop_cross_class: false          # keep all 7,200 images, as in the 2026-10-27 run
+perturb_settings:
+  reference_mask: null             # no perturbations in this run
+paths:
+  label_exclusions: none/no_label_exclusions.csv   # raw-set exclusions do not apply (file intentionally absent)

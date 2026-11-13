@@ -1,0 +1,4 @@
+# Source-shortcut control (a) V1: every image degraded to the same effective resolution (128 px, back to 256) before
+# features. Run with its own work/results dirs (python run_pipeline.py variants).
+preprocess:
+  degrade_to: 128

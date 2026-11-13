@@ -4,7 +4,8 @@
     python scripts/03_extract_features.py                    # full extraction (resumes: skips finished splits)
     python scripts/03_extract_features.py --force
 
-Output: work/features/clean_{train,val,test}.npy (rows in manifest order) + feature_names.json
+Output: work/features/clean_{train,val,test}.npy (rows in manifest order) + feature_names.json,
+        and clean_all.npy (every image, manifest order) for the Phase 1 protocol
 This is CPU-bound: a GPU does not help. Use as many cores as the machine has.
 """
 import argparse
@@ -18,7 +19,7 @@ import numpy as np  # noqa: E402
 
 from src.config import load_config  # noqa: E402
 from src.data import SPLITS, cache_file, load_cache, load_manifest, split_indices  # noqa: E402
-from src.features import extract_matrix, feature_dir, feature_schema, worker_cfg  # noqa: E402
+from src.features import extract_matrix, feature_dir, feature_schema, save_all_features, worker_cfg  # noqa: E402
 from src.utils import save_json, set_seed  # noqa: E402
 
 
@@ -59,6 +60,12 @@ def main():
         X = extract_matrix(cache_file(cfg), idx[split], sub, cfg["n_jobs"])
         np.save(out, X)
         print(f"{split}: {X.shape} in {time.time() - t0:.0f}s")
+
+    X_all = np.zeros((len(df), len(names)), np.float32)
+    for split in SPLITS:
+        X_all[idx[split]] = np.load(out_dir / f"clean_{split}.npy")
+    save_all_features(cfg, df, X_all)
+    print(f"all: {X_all.shape} -> clean_all.npy")
 
 
 if __name__ == "__main__":

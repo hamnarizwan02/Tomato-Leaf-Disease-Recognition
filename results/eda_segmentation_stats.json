@@ -1,0 +1,8 @@
+{
+  "method": "hsv",
+  "n_checked": 813,
+  "mask_frac_mean": 0.8282504861791782,
+  "mask_frac_median": 0.8900146484375,
+  "frac_mask_above_0.95": 0.3013530135301353,
+  "frac_fallback_whole_image": 0.06396063960639606
+}

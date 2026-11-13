@@ -1,0 +1,9 @@
+105 features: color=47, texture=38, shape=20
+train: (4954, 105) in 265s
+val: (1083, 105) in 57s
+test: (980, 105) in 54s
+all: (7017, 105) -> clean_all.npy
+
+real	6m22.986s
+user	0m0.000s
+sys	0m0.031s

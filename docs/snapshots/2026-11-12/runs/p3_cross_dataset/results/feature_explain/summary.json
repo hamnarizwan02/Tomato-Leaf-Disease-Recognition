@@ -1,0 +1,158 @@
+{
+  "counts": {
+    "raw": {
+      "healthy": 137,
+      "diseased": 676
+    },
+    "plantdoc": {
+      "healthy": 46,
+      "diseased": 264
+    },
+    "nazirpur": {
+      "healthy": 287,
+      "diseased": 355
+    },
+    "brahmanbaria": {
+      "healthy": 428,
+      "diseased": 607
+    }
+  },
+  "effect_threshold": 0.1,
+  "n_consistent": 2,
+  "consistent_features": [
+    "color_lab_A_skew",
+    "color_hue_hist_1"
+  ],
+  "n_same_sign_all": 11,
+  "agreement_healthy_vs_diseased": [
+    {
+      "a": "raw",
+      "b": "plantdoc",
+      "spearman_signed_effect": 0.21668048932199874,
+      "sign_agreement": 0.580952380952381
+    },
+    {
+      "a": "raw",
+      "b": "nazirpur",
+      "spearman_signed_effect": 0.016079203815052873,
+      "sign_agreement": 0.45714285714285713
+    },
+    {
+      "a": "raw",
+      "b": "brahmanbaria",
+      "spearman_signed_effect": -0.5131038772548207,
+      "sign_agreement": 0.2761904761904762
+    },
+    {
+      "a": "plantdoc",
+      "b": "nazirpur",
+      "spearman_signed_effect": 0.12155297532656023,
+      "sign_agreement": 0.5333333333333333
+    },
+    {
+      "a": "plantdoc",
+      "b": "brahmanbaria",
+      "spearman_signed_effect": -0.2135185569147833,
+      "sign_agreement": 0.37142857142857144
+    },
+    {
+      "a": "nazirpur",
+      "b": "brahmanbaria",
+      "spearman_signed_effect": 0.4037010159651669,
+      "sign_agreement": 0.6857142857142857
+    }
+  ],
+  "sixclass_spearman_raw_vs_plantdoc": 0.29500311009744973,
+  "sixclass_top10_jaccard": 0.1111111111111111,
+  "sixclass_top10_raw": [
+    "color_lab_B_std",
+    "texture_glcm_correlation_d3",
+    "color_lab_A_mean",
+    "color_hsv_S_skew",
+    "texture_glcm_correlation_d1",
+    "color_sat_hist_6",
+    "color_hsv_S_mean",
+    "color_hue_hist_1",
+    "color_lab_B_mean",
+    "color_sat_hist_2"
+  ],
+  "sixclass_top10_plantdoc": [
+    "color_hue_hist_1",
+    "texture_lbp_P16R2_12",
+    "texture_lbp_P16R2_13",
+    "color_lab_A_mean",
+    "texture_glcm_dissimilarity_d3",
+    "shape_grad_std",
+    "texture_glcm_contrast_d3",
+    "shape_grad_mean",
+    "texture_glcm_dissimilarity_d1",
+    "texture_glcm_homogeneity_d1"
+  ],
+  "sixclass_eta2_by_group": {
+    "eta2_raw": {
+      "color": 0.10109999775886536,
+      "shape": 0.06319999694824219,
+      "texture": 0.07490000128746033
+    },
+    "eta2_plantdoc": {
+      "color": 0.05169999971985817,
+      "shape": 0.05779999867081642,
+      "texture": 0.08619999885559082
+    }
+  },
+  "ks_mean_by_group": {
+    "plantdoc": {
+      "color": 0.123,
+      "shape": 0.19,
+      "texture": 0.283
+    },
+    "nazirpur": {
+      "color": 0.219,
+      "shape": 0.185,
+      "texture": 0.261
+    },
+    "brahmanbaria": {
+      "color": 0.3,
+      "shape": 0.182,
+      "texture": 0.234
+    }
+  },
+  "ks_top10_shift": {
+    "plantdoc": [
+      "texture_lbp_P8R1_7",
+      "texture_lbp_P8R1_8",
+      "texture_glcm_energy_d1",
+      "texture_glcm_energy_d3",
+      "shape_leaf_area_frac",
+      "texture_lbp_P16R2_16",
+      "texture_lbp_P16R2_15",
+      "texture_lbp_P8R1_4",
+      "texture_lbp_P16R2_8",
+      "texture_glcm_homogeneity_d3"
+    ],
+    "nazirpur": [
+      "texture_lbp_P16R2_3",
+      "texture_lbp_P16R2_4",
+      "color_lab_A_std",
+      "texture_lbp_P8R1_3",
+      "texture_lbp_P16R2_5",
+      "color_lab_B_std",
+      "shape_grad_mean",
+      "texture_lbp_P8R1_2",
+      "texture_lbp_P16R2_12",
+      "texture_glcm_contrast_d3"
+    ],
+    "brahmanbaria": [
+      "texture_lbp_P16R2_3",
+      "color_hue_hist_4",
+      "texture_lbp_P16R2_13",
+      "color_hsv_H_std",
+      "color_hsv_H_skew",
+      "color_hue_hist_5",
+      "color_rgb_B_mean",
+      "texture_lbp_P16R2_4",
+      "texture_lbp_P8R1_3",
+      "color_hue_hist_11"
+    ]
+  }
+}

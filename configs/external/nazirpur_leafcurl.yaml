@@ -1,0 +1,6 @@
+# Nazirpur "Leaf_Curl" folder scored as yellow leaf curl virus. UNCERTAIN MAPPING: the dataset does not say the curl
+# is viral (TYLCV); it is reported apart from the headline numbers and must be labelled as such wherever it is cited.
+name: nazirpur_leafcurl
+root: F:/NUST/ML/external/bd_nazirpur/TOMATO_LEAF_DATASET
+class_map:
+  Leaf_Curl: yellow_leaf_curl_virus

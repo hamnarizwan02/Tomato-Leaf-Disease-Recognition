@@ -1,0 +1,18 @@
+[tune rf on validation] ...
+[tune rf on validation] done in 149.8s
+  best rf: {'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}  val macro-F1=0.8189
+  rf: test acc=0.8111 macro-F1=0.8140 [0.787, 0.842]
+[tune svm on validation] ...
+[tune svm on validation] done in 24.5s
+  best svm: {'C': 10, 'gamma': 'scale'}  val macro-F1=0.8382
+  svm: test acc=0.8125 macro-F1=0.8147 [0.787, 0.843]
+[tune lr on validation] ...
+[tune lr on validation] done in 3.5s
+  best lr: {'C': 10}  val macro-F1=0.6917
+  lr: test acc=0.6972 macro-F1=0.6975 [0.666, 0.732]
+[RF learning curve] ...
+[RF learning curve] done in 22.8s
+
+real	4m29.430s
+user	0m0.000s
+sys	0m0.078s

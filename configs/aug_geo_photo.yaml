@@ -1,0 +1,10 @@
+# Phase 2, experiment A — A2 geometric + photometric: A1's flips and rotations (same draws per copy) plus modest
+# brightness and contrast scaling. No hue shift, blur or noise (they could alter disease cues or copy test perturbations).
+augmentation:
+  name: geo_photo
+  copies: 4
+  hflip_p: 0.5
+  vflip_p: 0.5
+  rotate_deg: 15
+  brightness: [0.8, 1.2]      # multiplicative factor, uniform
+  contrast: [0.8, 1.2]        # factor around the image mean, uniform

@@ -1,0 +1,211 @@
+seed,split,feature_set,model,n_features,params,val_macro_f1
+42,0,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.4676924689261985
+42,0,all,svm,105,"{'C': 1, 'gamma': 0.001}",0.5500841750841751
+42,0,all,lr,105,{'C': 1},0.60431898120381
+42,0,color,rf,47,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.5060472342279595
+42,0,color,svm,47,"{'C': 1, 'gamma': 'scale'}",0.5662245629889715
+42,0,color,lr,47,{'C': 1},0.6060387304341179
+42,0,texture,rf,38,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.39801737140479526
+42,0,texture,svm,38,"{'C': 1, 'gamma': 0.01}",0.4053792179309894
+42,0,texture,lr,38,{'C': 0.1},0.35733266733266733
+42,0,shape,rf,20,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.4114192903548226
+42,0,shape,svm,20,"{'C': 100, 'gamma': 0.01}",0.3924121995089737
+42,0,shape,lr,20,{'C': 1},0.3276113360323886
+42,0,color+texture,rf,85,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.48178198482458123
+42,0,color+texture,svm,85,"{'C': 1, 'gamma': 'scale'}",0.6260967159517884
+42,0,color+texture,lr,85,{'C': 1},0.5931593785160744
+42,0,pruned,rf,84,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.46648492916641743
+42,0,pruned,svm,84,"{'C': 10, 'gamma': 0.001}",0.5390292745365208
+42,0,pruned,lr,84,{'C': 0.1},0.6142796143766583
+42,0,meta,rf,6,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.4268109668109668
+42,0,meta,svm,6,"{'C': 100, 'gamma': 'scale'}",0.4319651236127208
+42,0,meta,lr,6,{'C': 10},0.35145222366972817
+43,1,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.6585819359543194
+43,1,all,svm,105,"{'C': 1, 'gamma': 0.01}",0.690673384586428
+43,1,all,lr,105,{'C': 0.01},0.6014373698197227
+43,1,color,rf,47,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.5983370751112687
+43,1,color,svm,47,"{'C': 10, 'gamma': 'scale'}",0.6114370432305215
+43,1,color,lr,47,{'C': 0.01},0.6137932437932437
+43,1,texture,rf,38,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.5465804241242839
+43,1,texture,svm,38,"{'C': 10, 'gamma': 0.01}",0.5934964895048929
+43,1,texture,lr,38,{'C': 0.1},0.48808538378691385
+43,1,shape,rf,20,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.35521442495126704
+43,1,shape,svm,20,"{'C': 1, 'gamma': 0.01}",0.3266396091854144
+43,1,shape,lr,20,{'C': 1},0.30144099727433055
+43,1,color+texture,rf,85,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.6301269382791121
+43,1,color+texture,svm,85,"{'C': 1, 'gamma': 'scale'}",0.6989876496864075
+43,1,color+texture,lr,85,{'C': 0.01},0.6010022493846022
+43,1,pruned,rf,89,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.6535198857594263
+43,1,pruned,svm,89,"{'C': 1, 'gamma': 0.01}",0.6912698910628516
+43,1,pruned,lr,89,{'C': 0.01},0.6033401892225422
+43,1,meta,rf,6,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.5363529014844804
+43,1,meta,svm,6,"{'C': 1, 'gamma': 'scale'}",0.4207579622381889
+43,1,meta,lr,6,{'C': 1},0.39463332719911665
+44,2,all,rf,105,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.4685185185185185
+44,2,all,svm,105,"{'C': 100, 'gamma': 'scale'}",0.5966991577161068
+44,2,all,lr,105,{'C': 0.1},0.5717769158945629
+44,2,color,rf,47,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.48200088501548777
+44,2,color,svm,47,"{'C': 10, 'gamma': 0.01}",0.5244190268700072
+44,2,color,lr,47,{'C': 0.1},0.4850159208982738
+44,2,texture,rf,38,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.4413043478260869
+44,2,texture,svm,38,"{'C': 100, 'gamma': 0.01}",0.48181019249567636
+44,2,texture,lr,38,{'C': 10},0.5235188288208836
+44,2,shape,rf,20,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.34124440580830034
+44,2,shape,svm,20,"{'C': 100, 'gamma': 0.001}",0.35501720501720496
+44,2,shape,lr,20,{'C': 0.1},0.3933684371184371
+44,2,color+texture,rf,85,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.48340695252459964
+44,2,color+texture,svm,85,"{'C': 1, 'gamma': 'scale'}",0.547934472934473
+44,2,color+texture,lr,85,{'C': 0.1},0.5450953547288134
+44,2,pruned,rf,86,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.4663546439309376
+44,2,pruned,svm,86,"{'C': 1, 'gamma': 0.01}",0.5816388513640286
+44,2,pruned,lr,86,{'C': 0.1},0.6079767539199588
+44,2,meta,rf,6,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.4439849278558956
+44,2,meta,svm,6,"{'C': 100, 'gamma': 'scale'}",0.4475459381044487
+44,2,meta,lr,6,{'C': 10},0.3864448405624876
+45,3,all,rf,105,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.4984643605870021
+45,3,all,svm,105,"{'C': 100, 'gamma': 0.001}",0.5454598953246689
+45,3,all,lr,105,{'C': 0.1},0.52791601757119
+45,3,color,rf,47,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.49346628679962007
+45,3,color,svm,47,"{'C': 10, 'gamma': 0.01}",0.5323260073260073
+45,3,color,lr,47,{'C': 10},0.5671957671957671
+45,3,texture,rf,38,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.43829745303429507
+45,3,texture,svm,38,"{'C': 100, 'gamma': 'scale'}",0.4585213044115905
+45,3,texture,lr,38,{'C': 1},0.42073463942792433
+45,3,shape,rf,20,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.30636420571765405
+45,3,shape,svm,20,"{'C': 10, 'gamma': 0.01}",0.3319894903946628
+45,3,shape,lr,20,{'C': 10},0.30164265167289966
+45,3,color+texture,rf,85,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.5177590626097353
+45,3,color+texture,svm,85,"{'C': 10, 'gamma': 0.001}",0.5945734297255596
+45,3,color+texture,lr,85,{'C': 0.1},0.5674614189293382
+45,3,pruned,rf,86,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.49867149758454105
+45,3,pruned,svm,86,"{'C': 100, 'gamma': 0.001}",0.5468908465157399
+45,3,pruned,lr,86,{'C': 0.1},0.555978695633868
+45,3,meta,rf,6,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.44403056470666535
+45,3,meta,svm,6,"{'C': 1, 'gamma': 'scale'}",0.39579368564875805
+45,3,meta,lr,6,{'C': 10},0.3203102453102453
+46,4,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.5424995537888618
+46,4,all,svm,105,"{'C': 1, 'gamma': 0.001}",0.6327369256966957
+46,4,all,lr,105,{'C': 0.01},0.6451150651419467
+46,4,color,rf,47,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.613435003631082
+46,4,color,svm,47,"{'C': 10, 'gamma': 0.001}",0.611117242545814
+46,4,color,lr,47,{'C': 0.1},0.5709706959706959
+46,4,texture,rf,38,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.38528070277237875
+46,4,texture,svm,38,"{'C': 10, 'gamma': 'scale'}",0.4881037201495606
+46,4,texture,lr,38,{'C': 1},0.513319530710835
+46,4,shape,rf,20,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.44635053620560866
+46,4,shape,svm,20,"{'C': 1, 'gamma': 0.01}",0.47868315725458577
+46,4,shape,lr,20,{'C': 1},0.4461894868416607
+46,4,color+texture,rf,85,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.5142572342327244
+46,4,color+texture,svm,85,"{'C': 10, 'gamma': 0.001}",0.6124306249306248
+46,4,color+texture,lr,85,{'C': 0.1},0.5988081871204826
+46,4,pruned,rf,87,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.5679226388411115
+46,4,pruned,svm,87,"{'C': 1, 'gamma': 0.001}",0.5942864035605971
+46,4,pruned,lr,87,{'C': 0.01},0.6231048166392994
+46,4,meta,rf,6,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.5074691905747807
+46,4,meta,svm,6,"{'C': 100, 'gamma': 'scale'}",0.4809388248052844
+46,4,meta,lr,6,{'C': 10},0.44308648377008936
+47,5,all,rf,105,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.5335168669934104
+47,5,all,svm,105,"{'C': 10, 'gamma': 'scale'}",0.5917801896340141
+47,5,all,lr,105,{'C': 1},0.5217330459265942
+47,5,color,rf,47,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.5217942835843443
+47,5,color,svm,47,"{'C': 1, 'gamma': 0.01}",0.5614868791339379
+47,5,color,lr,47,{'C': 0.1},0.5379238627666301
+47,5,texture,rf,38,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.4204876988336151
+47,5,texture,svm,38,"{'C': 10, 'gamma': 0.001}",0.46696025885810144
+47,5,texture,lr,38,{'C': 1},0.44822285241640075
+47,5,shape,rf,20,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.32389979971900873
+47,5,shape,svm,20,"{'C': 1, 'gamma': 'scale'}",0.3442755777752753
+47,5,shape,lr,20,{'C': 10},0.3568993689429795
+47,5,color+texture,rf,85,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.5208085027249179
+47,5,color+texture,svm,85,"{'C': 100, 'gamma': 0.001}",0.543585400282315
+47,5,color+texture,lr,85,{'C': 0.01},0.5395443359530047
+47,5,pruned,rf,85,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.508494650004084
+47,5,pruned,svm,85,"{'C': 10, 'gamma': 0.001}",0.5807032193904548
+47,5,pruned,lr,85,{'C': 1},0.5555369013702346
+47,5,meta,rf,6,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.4228917488326091
+47,5,meta,svm,6,"{'C': 100, 'gamma': 0.01}",0.4845586187691451
+47,5,meta,lr,6,{'C': 10},0.47221649553992506
+48,6,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.5121638044614056
+48,6,all,svm,105,"{'C': 10, 'gamma': 0.001}",0.5170180564827099
+48,6,all,lr,105,{'C': 0.1},0.5479460948258902
+48,6,color,rf,47,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.4534632034632035
+48,6,color,svm,47,"{'C': 100, 'gamma': 0.001}",0.5097402597402597
+48,6,color,lr,47,{'C': 0.1},0.5104178213923342
+48,6,texture,rf,38,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.4607043283513872
+48,6,texture,svm,38,"{'C': 1, 'gamma': 'scale'}",0.45625240873688083
+48,6,texture,lr,38,{'C': 0.1},0.44444174183304613
+48,6,shape,rf,20,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.3955172507804087
+48,6,shape,svm,20,"{'C': 1, 'gamma': 'scale'}",0.3186179361179361
+48,6,shape,lr,20,{'C': 0.01},0.3179700999173616
+48,6,color+texture,rf,85,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.501198373990365
+48,6,color+texture,svm,85,"{'C': 100, 'gamma': 0.001}",0.5644308669126405
+48,6,color+texture,lr,85,{'C': 1},0.5439189487810339
+48,6,pruned,rf,93,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.5156259996161474
+48,6,pruned,svm,93,"{'C': 10, 'gamma': 0.001}",0.5070559667333862
+48,6,pruned,lr,93,{'C': 0.1},0.5418477673379635
+48,6,meta,rf,6,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.44431216931216927
+48,6,meta,svm,6,"{'C': 100, 'gamma': 0.001}",0.3895714607682153
+48,6,meta,lr,6,{'C': 1},0.3932460461498574
+49,7,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.5815998912663035
+49,7,all,svm,105,"{'C': 10, 'gamma': 0.001}",0.6562610229276896
+49,7,all,lr,105,{'C': 0.01},0.6490038314176245
+49,7,color,rf,47,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.5670933977455717
+49,7,color,svm,47,"{'C': 10, 'gamma': 'scale'}",0.625543559754086
+49,7,color,lr,47,{'C': 1},0.5573390008684127
+49,7,texture,rf,38,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.4965210385229361
+49,7,texture,svm,38,"{'C': 10, 'gamma': 'scale'}",0.514116424401293
+49,7,texture,lr,38,{'C': 0.01},0.48729819563152893
+49,7,shape,rf,20,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.43514314533495974
+49,7,shape,svm,20,"{'C': 100, 'gamma': 'scale'}",0.35705092398640786
+49,7,shape,lr,20,{'C': 10},0.4378593818694069
+49,7,color+texture,rf,85,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.5702472176610107
+49,7,color+texture,svm,85,"{'C': 10, 'gamma': 0.001}",0.6357107193009831
+49,7,color+texture,lr,85,{'C': 0.1},0.598969817085759
+49,7,pruned,rf,89,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.6002388753910052
+49,7,pruned,svm,89,"{'C': 10, 'gamma': 0.01}",0.6284439311787094
+49,7,pruned,lr,89,{'C': 0.01},0.6228834300798319
+49,7,meta,rf,6,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.4752695417789757
+49,7,meta,svm,6,"{'C': 100, 'gamma': 0.001}",0.37443658280922437
+49,7,meta,lr,6,{'C': 1},0.3795338441890166
+50,8,all,rf,105,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.6443678543678543
+50,8,all,svm,105,"{'C': 1, 'gamma': 0.01}",0.6591697191697191
+50,8,all,lr,105,{'C': 0.1},0.60506743438116
+50,8,color,rf,47,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.5843101343101343
+50,8,color,svm,47,"{'C': 1, 'gamma': 'scale'}",0.5950761798587886
+50,8,color,lr,47,{'C': 1},0.5534463040237708
+50,8,texture,rf,38,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.5168751263144855
+50,8,texture,svm,38,"{'C': 100, 'gamma': 0.001}",0.5036019536019536
+50,8,texture,lr,38,{'C': 1},0.5347331132716592
+50,8,shape,rf,20,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.3576354833185434
+50,8,shape,svm,20,"{'C': 10, 'gamma': 0.001}",0.38395169645169647
+50,8,shape,lr,20,{'C': 10},0.40807248307248306
+50,8,color+texture,rf,85,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.6284153391140687
+50,8,color+texture,svm,85,"{'C': 100, 'gamma': 0.001}",0.6432441907580643
+50,8,color+texture,lr,85,{'C': 1},0.6179086842357673
+50,8,pruned,rf,87,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.6573721340388007
+50,8,pruned,svm,87,"{'C': 1, 'gamma': 'scale'}",0.6768218665949046
+50,8,pruned,lr,87,{'C': 0.1},0.6028729194425205
+50,8,meta,rf,6,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.5728489867620302
+50,8,meta,svm,6,"{'C': 100, 'gamma': 'scale'}",0.39898017340204567
+50,8,meta,lr,6,{'C': 1},0.3574362041467305
+51,9,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.6754135882949442
+51,9,all,svm,105,"{'C': 10, 'gamma': 0.001}",0.718589435256102
+51,9,all,lr,105,{'C': 0.1},0.6548199222709027
+51,9,color,rf,47,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.6312450977765379
+51,9,color,svm,47,"{'C': 10, 'gamma': 'scale'}",0.5830704898446833
+51,9,color,lr,47,{'C': 0.1},0.5808684546615581
+51,9,texture,rf,38,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.60460834397616
+51,9,texture,svm,38,"{'C': 10, 'gamma': 0.01}",0.6085049250266642
+51,9,texture,lr,38,{'C': 0.1},0.5595463178796513
+51,9,shape,rf,20,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.41405758357153233
+51,9,shape,svm,20,"{'C': 100, 'gamma': 0.01}",0.4502413435092257
+51,9,shape,lr,20,{'C': 0.01},0.3782330823383826
+51,9,color+texture,rf,85,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.713183397981092
+51,9,color+texture,svm,85,"{'C': 10, 'gamma': 0.01}",0.6442135642135642
+51,9,color+texture,lr,85,{'C': 1},0.5925066312997348
+51,9,pruned,rf,81,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.6931593714927048
+51,9,pruned,svm,81,"{'C': 100, 'gamma': 0.001}",0.7116548401607824
+51,9,pruned,lr,81,{'C': 0.1},0.6482383308699098
+51,9,meta,rf,6,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.4819740728057158
+51,9,meta,svm,6,"{'C': 1, 'gamma': 'scale'}",0.431729055258467
+51,9,meta,lr,6,{'C': 10},0.39170434154954276

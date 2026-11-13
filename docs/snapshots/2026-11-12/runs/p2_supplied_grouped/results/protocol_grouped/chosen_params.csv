@@ -1,0 +1,61 @@
+seed,split,feature_set,model,n_features,params,val_macro_f1
+42,0,all,rf,105,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.7044065063230894
+42,0,all,svm,105,"{'C': 1, 'gamma': 'scale'}",0.6628689237396279
+42,0,all,lr,105,{'C': 0.01},0.6408466568507695
+42,0,meta,rf,6,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.2514109130415659
+42,0,meta,svm,6,"{'C': 100, 'gamma': 'scale'}",0.23616792440863388
+42,0,meta,lr,6,{'C': 1},0.20973586844782188
+43,1,all,rf,105,"{'max_depth': 20, 'max_features': 0.3, 'min_samples_leaf': 1}",0.6892811959608979
+43,1,all,svm,105,"{'C': 1, 'gamma': 'scale'}",0.684100852769063
+43,1,all,lr,105,{'C': 10},0.6112918429133772
+43,1,meta,rf,6,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.26324932349860275
+43,1,meta,svm,6,"{'C': 100, 'gamma': 'scale'}",0.2898000094319453
+43,1,meta,lr,6,{'C': 1},0.213634628081012
+44,2,all,rf,105,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.640612138679603
+44,2,all,svm,105,"{'C': 100, 'gamma': 0.001}",0.7074221155173864
+44,2,all,lr,105,{'C': 10},0.6239943386654857
+44,2,meta,rf,6,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.22720113368782047
+44,2,meta,svm,6,"{'C': 10, 'gamma': 'scale'}",0.25386043316572254
+44,2,meta,lr,6,{'C': 1},0.22844294817027033
+45,3,all,rf,105,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.5825972348787675
+45,3,all,svm,105,"{'C': 10, 'gamma': 0.001}",0.6236070889476832
+45,3,all,lr,105,{'C': 0.1},0.6473971681673459
+45,3,meta,rf,6,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.2660688896968182
+45,3,meta,svm,6,"{'C': 100, 'gamma': 'scale'}",0.30438326638800156
+45,3,meta,lr,6,{'C': 1},0.2576095890244563
+46,4,all,rf,105,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.6379389521148123
+46,4,all,svm,105,"{'C': 1, 'gamma': 'scale'}",0.6413412821624674
+46,4,all,lr,105,{'C': 1},0.6337570182841823
+46,4,meta,rf,6,"{'max_depth': 20, 'max_features': 0.3, 'min_samples_leaf': 2}",0.25225696740228404
+46,4,meta,svm,6,"{'C': 100, 'gamma': 'scale'}",0.26981291622000914
+46,4,meta,lr,6,{'C': 0.1},0.20643395933165895
+47,5,all,rf,105,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.5640920641762553
+47,5,all,svm,105,"{'C': 1, 'gamma': 'scale'}",0.5941503912202828
+47,5,all,lr,105,{'C': 0.1},0.5466486037823725
+47,5,meta,rf,6,"{'max_depth': 20, 'max_features': 0.3, 'min_samples_leaf': 2}",0.24689994569724605
+47,5,meta,svm,6,"{'C': 1, 'gamma': 'scale'}",0.246547774305009
+47,5,meta,lr,6,{'C': 1},0.2353873656963508
+48,6,all,rf,105,"{'max_depth': 20, 'max_features': 0.3, 'min_samples_leaf': 1}",0.5977056294639173
+48,6,all,svm,105,"{'C': 10, 'gamma': 0.01}",0.6294795414762001
+48,6,all,lr,105,{'C': 0.01},0.6039735226759531
+48,6,meta,rf,6,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 2}",0.21946142393837142
+48,6,meta,svm,6,"{'C': 100, 'gamma': 'scale'}",0.19622574630253298
+48,6,meta,lr,6,{'C': 10},0.17734763400180198
+49,7,all,rf,105,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 1}",0.5834391112808185
+49,7,all,svm,105,"{'C': 100, 'gamma': 0.001}",0.6420327048509121
+49,7,all,lr,105,{'C': 10},0.6645287607440774
+49,7,meta,rf,6,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 2}",0.24776280211919877
+49,7,meta,svm,6,"{'C': 10, 'gamma': 'scale'}",0.2500905555784177
+49,7,meta,lr,6,{'C': 1},0.2177872250260778
+50,8,all,rf,105,"{'max_depth': 20, 'max_features': 0.3, 'min_samples_leaf': 1}",0.7555707182921177
+50,8,all,svm,105,"{'C': 1, 'gamma': 'scale'}",0.7473701323842041
+50,8,all,lr,105,{'C': 0.1},0.6354405948313678
+50,8,meta,rf,6,"{'max_depth': 40, 'max_features': 0.3, 'min_samples_leaf': 2}",0.2772542527992357
+50,8,meta,svm,6,"{'C': 100, 'gamma': 'scale'}",0.28032694102051725
+50,8,meta,lr,6,{'C': 10},0.2574282061507956
+51,9,all,rf,105,"{'max_depth': None, 'max_features': 0.3, 'min_samples_leaf': 1}",0.6288743534580016
+51,9,all,svm,105,"{'C': 10, 'gamma': 'scale'}",0.6500055059310016
+51,9,all,lr,105,{'C': 1},0.6458866926108209
+51,9,meta,rf,6,"{'max_depth': 20, 'max_features': 0.3, 'min_samples_leaf': 2}",0.24401564021068547
+51,9,meta,svm,6,"{'C': 1, 'gamma': 'scale'}",0.2765032169100131
+51,9,meta,lr,6,{'C': 10},0.24466019107835782

@@ -1,0 +1,12 @@
+# Task 2: grouped evaluation of the supplied Augmented Dataset. The supplied folders are ignored; images are re-split
+# by source group (scripts/19_group_supplied.py adds the frozen sibling rules of scripts/18 to the pipeline grouping),
+# then scored with the main protocol (10 grouped 70/15/15 splits, seeds 42-51, tuning inside each split).
+# Set TOMATO_DATA_ROOT to ".../Tomato Dataset/Augmented Dataset" and give the run its own work/results/manifest.
+dataset:
+  split_strategy: group
+duplicates:
+  drop_cross_class: true           # same policy as the raw set: a photo filed under two classes has no knowable label
+perturb_settings:
+  reference_mask: null             # clean evaluation only
+paths:
+  label_exclusions: none/no_label_exclusions.csv   # raw-set exclusions do not apply (file intentionally absent)

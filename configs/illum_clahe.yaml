@@ -1,0 +1,7 @@
+# Phase 2, experiment B — CLAHE on the L channel of LAB (a, b untouched). OpenCV defaults, fixed in advance.
+# Applied after any test perturbation and before segmentation/features (src/illumination.py). No augmentation.
+preprocess:
+  illumination:
+    method: clahe
+    clip_limit: 2.0
+    tile_grid: 8

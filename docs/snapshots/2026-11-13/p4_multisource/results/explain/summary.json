@@ -1,0 +1,260 @@
+{
+ "eligible_sources": [
+  "brahmanbaria",
+  "nazirpur",
+  "pk_raw",
+  "plantdoc",
+  "plantvillage",
+  "plantwild",
+  "tomato_village"
+ ],
+ "n_stable": {
+  "concepts": 1,
+  "formula": 15,
+  "kmeans": 8
+ },
+ "stable_features": [
+  "lesion_yellow_frac",
+  "color_hue_hist_1",
+  "colour_word_06",
+  "lesion_db",
+  "colour_word_23",
+  "lesion_nongreen_frac",
+  "lesion_spot_largest_frac",
+  "colour_word_14",
+  "lesion_chroma_r_std",
+  "colour_word_15",
+  "texture_lbp_P16R2_14",
+  "lesion_spot_mean_frac",
+  "color_lab_A_skew",
+  "colour_word_16",
+  "texture_lbp_P8R1_1",
+  "colour_word_21",
+  "symptom_miner_trails",
+  "lesion_margin_share",
+  "texton_19",
+  "texture_lbp_P16R2_16",
+  "color_hue_hist_3",
+  "colour_word_17",
+  "lesion_spot_circularity",
+  "texture_glcm_correlation_d1"
+ ],
+ "selection_mean": [
+  {
+   "pool": "all",
+   "features": "all",
+   "model": "l1lr",
+   "balanced_accuracy": 0.7145,
+   "auc": 0.8301,
+   "healthy_recall": 0.6157
+  },
+  {
+   "pool": "all",
+   "features": "all",
+   "model": "rf",
+   "balanced_accuracy": 0.5606,
+   "auc": 0.7082,
+   "healthy_recall": 0.1521
+  },
+  {
+   "pool": "all",
+   "features": "selected",
+   "model": "l1lr",
+   "balanced_accuracy": 0.621,
+   "auc": 0.6706,
+   "healthy_recall": 0.5772
+  },
+  {
+   "pool": "all",
+   "features": "selected",
+   "model": "rf",
+   "balanced_accuracy": 0.5967,
+   "auc": 0.7059,
+   "healthy_recall": 0.2686
+  },
+  {
+   "pool": "concepts",
+   "features": "all",
+   "model": "l1lr",
+   "balanced_accuracy": 0.7588,
+   "auc": 0.8521,
+   "healthy_recall": 0.7548
+  },
+  {
+   "pool": "concepts",
+   "features": "all",
+   "model": "rf",
+   "balanced_accuracy": 0.6603,
+   "auc": 0.8257,
+   "healthy_recall": 0.4006
+  },
+  {
+   "pool": "concepts",
+   "features": "selected",
+   "model": "l1lr",
+   "balanced_accuracy": 0.5747,
+   "auc": 0.6048,
+   "healthy_recall": 0.6011
+  },
+  {
+   "pool": "concepts",
+   "features": "selected",
+   "model": "rf",
+   "balanced_accuracy": 0.515,
+   "auc": 0.5517,
+   "healthy_recall": 0.2723
+  },
+  {
+   "pool": "formula",
+   "features": "all",
+   "model": "l1lr",
+   "balanced_accuracy": 0.6396,
+   "auc": 0.7166,
+   "healthy_recall": 0.5068
+  },
+  {
+   "pool": "formula",
+   "features": "all",
+   "model": "rf",
+   "balanced_accuracy": 0.582,
+   "auc": 0.7117,
+   "healthy_recall": 0.2305
+  },
+  {
+   "pool": "formula",
+   "features": "selected",
+   "model": "l1lr",
+   "balanced_accuracy": 0.6258,
+   "auc": 0.6838,
+   "healthy_recall": 0.5941
+  },
+  {
+   "pool": "formula",
+   "features": "selected",
+   "model": "rf",
+   "balanced_accuracy": 0.5734,
+   "auc": 0.708,
+   "healthy_recall": 0.2675
+  },
+  {
+   "pool": "formula+kmeans",
+   "features": "all",
+   "model": "l1lr",
+   "balanced_accuracy": 0.6434,
+   "auc": 0.7205,
+   "healthy_recall": 0.5426
+  },
+  {
+   "pool": "formula+kmeans",
+   "features": "all",
+   "model": "rf",
+   "balanced_accuracy": 0.5605,
+   "auc": 0.692,
+   "healthy_recall": 0.1624
+  },
+  {
+   "pool": "formula+kmeans",
+   "features": "selected",
+   "model": "l1lr",
+   "balanced_accuracy": 0.6174,
+   "auc": 0.6698,
+   "healthy_recall": 0.5815
+  },
+  {
+   "pool": "formula+kmeans",
+   "features": "selected",
+   "model": "rf",
+   "balanced_accuracy": 0.5765,
+   "auc": 0.6872,
+   "healthy_recall": 0.2381
+  },
+  {
+   "pool": "kmeans",
+   "features": "all",
+   "model": "l1lr",
+   "balanced_accuracy": 0.5958,
+   "auc": 0.6594,
+   "healthy_recall": 0.5188
+  },
+  {
+   "pool": "kmeans",
+   "features": "all",
+   "model": "rf",
+   "balanced_accuracy": 0.5645,
+   "auc": 0.6317,
+   "healthy_recall": 0.1773
+  },
+  {
+   "pool": "kmeans",
+   "features": "selected",
+   "model": "l1lr",
+   "balanced_accuracy": 0.6072,
+   "auc": 0.669,
+   "healthy_recall": 0.6861
+  },
+  {
+   "pool": "kmeans",
+   "features": "selected",
+   "model": "rf",
+   "balanced_accuracy": 0.5604,
+   "auc": 0.6116,
+   "healthy_recall": 0.2588
+  }
+ ],
+ "glassbox_sign_stable": [
+  "context_in_hand",
+  "context_plain_background",
+  "context_studio",
+  "context_underexposed",
+  "symptom_healthy_green",
+  "symptom_miner_trails",
+  "symptom_mosaic_pattern",
+  "symptom_necrotic_edges",
+  "symptom_pale_patches",
+  "symptom_target_spots",
+  "symptom_wilting",
+  "symptom_yellowing",
+  "color_hsv_S_skew",
+  "color_hue_hist_11",
+  "color_hue_hist_7",
+  "color_hue_hist_9",
+  "color_lab_A_std",
+  "color_lab_B_skew",
+  "color_lab_B_std",
+  "color_sat_hist_3",
+  "color_sat_hist_5",
+  "color_sat_hist_6",
+  "color_sat_hist_7",
+  "lesion_chroma_g_std",
+  "lesion_chroma_r_std",
+  "lesion_dL",
+  "lesion_da",
+  "lesion_dark_frac",
+  "lesion_margin_share",
+  "lesion_nongreen_frac",
+  "lesion_spot_density",
+  "shape_circularity",
+  "shape_hu6",
+  "shape_lesion_largest_frac",
+  "shape_lesion_mean_frac",
+  "texture_glcm_homogeneity_d3",
+  "texture_lbp_P16R2_0",
+  "texture_lbp_P16R2_1",
+  "texture_lbp_P16R2_12",
+  "texture_lbp_P16R2_14",
+  "texture_lbp_P16R2_17",
+  "texture_lbp_P16R2_7",
+  "texture_lbp_P8R1_2",
+  "texture_lbp_P8R1_8"
+ ],
+ "rf_importance_vs_stability_spearman_per_fold": {
+  "brahmanbaria": -0.22,
+  "nazirpur": -0.132,
+  "pd_raw": 0.078,
+  "pk_raw": 0.045,
+  "plantdoc": 0.037,
+  "plantvillage": 0.155,
+  "plantwild": 0.136,
+  "tomato_village": -0.03
+ }
+}

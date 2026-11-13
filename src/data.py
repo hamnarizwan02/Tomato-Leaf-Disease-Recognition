@@ -16,6 +16,7 @@ import numpy as np
 import pandas as pd
 
 from .duplicates import find_near_duplicates
+from .segment import segment_leaf
 from .utils import load_json, save_json
 
 SPLITS = ("train", "val", "test")
@@ -228,10 +229,29 @@ def group_split(df: pd.DataFrame, fracs: dict, seed: int) -> pd.Series:
     return split
 
 
+def apply_label_exclusions(cfg, df: pd.DataFrame) -> pd.DataFrame:
+    """Drop every photo listed in label_exclusions.csv (path,reason), together with its whole source group,
+    so no copy of a photo judged mislabelled survives. The list is written by hand after scripts/15_label_audit.py."""
+    f = cfg["paths"].get("label_exclusions")
+    if not f or not f.exists():
+        return df
+    ex = pd.read_csv(f)
+    if ex.empty:
+        return df
+    missing = sorted(set(ex["path"]) - set(df["path"]))
+    if missing:
+        print(f"WARNING: {len(missing)} paths in {f.name} are not in the dataset, e.g. {missing[:3]}")
+    bad = set(df.loc[df["path"].isin(ex["path"]), "group"])
+    drop = df["group"].isin(bad).values
+    print(f"Label exclusions: {len(ex)} listed photos -> dropping {int(drop.sum())} images ({len(bad)} source groups)")
+    return df[~drop].reset_index(drop=True)
+
+
 def build_manifest(cfg) -> pd.DataFrame:
     df = scan_images(cfg)
     if cfg["dataset"].get("group_by_hash"):
         df = refine_groups(cfg, df)
+    df = apply_label_exclusions(cfg, df)
     strategy = cfg["dataset"]["split_strategy"]
     have_official = df["official_split"].notna().all()
     if strategy == "official":
@@ -288,8 +308,28 @@ def _meta_file(cfg):
     return cfg["paths"]["work_dir"] / "images_cache.meta.json"
 
 
-def _paths_hash(df: pd.DataFrame, size: int) -> str:
-    return hashlib.md5(("|".join(df["path"]) + f"#{size}").encode()).hexdigest()
+def _paths_hash(cfg, df: pd.DataFrame) -> str:
+    pre = cfg["preprocess"]
+    extra = "".join(f"#{k}={pre[k]}" for k in ("degrade_to", "reencode_quality") if pre.get(k))
+    return hashlib.md5(("|".join(df["path"]) + f"#{pre['image_size']}" + extra).encode()).hexdigest()
+
+
+def manifest_hash(df: pd.DataFrame) -> str:
+    return hashlib.md5("|".join(df["path"]).encode()).hexdigest()
+
+
+def _standardise(img: np.ndarray, size: int, pre: dict) -> np.ndarray:
+    """Resize to size x size, then the optional source-shortcut controls (same effective resolution / compression)."""
+    img = cv2.resize(img, (size, size), interpolation=cv2.INTER_AREA)
+    if pre.get("degrade_to"):
+        d = int(pre["degrade_to"])
+        img = cv2.resize(cv2.resize(img, (d, d), interpolation=cv2.INTER_AREA), (size, size),
+                         interpolation=cv2.INTER_LINEAR)
+    if pre.get("reencode_quality"):
+        ok, buf = cv2.imencode(".jpg", cv2.cvtColor(img, cv2.COLOR_RGB2BGR),
+                               [cv2.IMWRITE_JPEG_QUALITY, int(pre["reencode_quality"])])
+        img = cv2.cvtColor(cv2.imdecode(buf, cv2.IMREAD_COLOR), cv2.COLOR_BGR2RGB)
+    return img
 
 
 def _read_rgb(path) -> np.ndarray | None:
@@ -300,9 +340,10 @@ def _read_rgb(path) -> np.ndarray | None:
 
 
 def build_image_cache(cfg, df: pd.DataFrame, force: bool = False, n_threads: int = 8) -> None:
-    size = cfg["preprocess"]["image_size"]
+    pre = cfg["preprocess"]
+    size = pre["image_size"]
     out, meta = cache_file(cfg), _meta_file(cfg)
-    h = _paths_hash(df, size)
+    h = _paths_hash(cfg, df)
     if out.exists() and meta.exists() and not force and load_json(meta).get("hash") == h:
         print(f"Image cache up to date: {out}")
         return
@@ -315,7 +356,7 @@ def build_image_cache(cfg, df: pd.DataFrame, force: bool = False, n_threads: int
         img = _read_rgb(root / paths[i])
         if img is None:
             return i, False
-        mm[i] = cv2.resize(img, (size, size), interpolation=cv2.INTER_AREA)
+        mm[i] = _standardise(img, size, pre)
         return i, True
 
     print(f"Building image cache ({len(df)} images -> {size}x{size}) ...")
@@ -325,7 +366,8 @@ def build_image_cache(cfg, df: pd.DataFrame, force: bool = False, n_threads: int
     bad = [paths[i] for i, ok in results if not ok]
     if bad:
         raise RuntimeError(f"{len(bad)} unreadable images, e.g. {bad[:5]}")
-    save_json({"hash": h, "n": len(df), "size": size}, meta)
+    save_json({"hash": h, "n": len(df), "size": size,
+               "degrade_to": pre.get("degrade_to"), "reencode_quality": pre.get("reencode_quality")}, meta)
     print(f"Saved {out}  ({out.stat().st_size / 1e9:.2f} GB)")
 
 
@@ -334,6 +376,40 @@ def load_cache(cfg, df: pd.DataFrame | None = None) -> np.ndarray:
     if not f.exists():
         raise FileNotFoundError(f"{f} missing. Run scripts/01_prepare_data.py first.")
     if df is not None and _meta_file(cfg).exists():
-        if load_json(_meta_file(cfg)).get("hash") != _paths_hash(df, cfg["preprocess"]["image_size"]):
+        if load_json(_meta_file(cfg)).get("hash") != _paths_hash(cfg, df):
             raise RuntimeError("Image cache does not match manifest.csv. Re-run scripts/01_prepare_data.py --force")
     return np.load(f, mmap_mode="r")
+
+
+# --------------------------------------------------------------------------- reference masks
+def ref_mask_file(cfg):
+    # the name starts with images_cache so the segmentation-comparison runner copies it with the cache
+    return cfg["paths"]["work_dir"] / "images_cache.refmask.npy"
+
+
+def ensure_ref_masks(cfg, df: pd.DataFrame, force: bool = False, n_threads: int = 8):
+    """One fixed leaf mask per cached image (bit-packed), used for background replacement whatever mask the
+    features use. Returns its path, or None when perturb_settings.reference_mask is null (old behaviour)."""
+    method = (cfg.get("perturb_settings") or {}).get("reference_mask")
+    if not method:
+        return None
+    out = ref_mask_file(cfg)
+    meta = out.with_name(out.name + ".json")
+    key = {"cache": _paths_hash(cfg, df), "method": method}
+    if out.exists() and meta.exists() and not force and load_json(meta) == key:
+        return out
+    imgs = load_cache(cfg, df)
+    seg = {**cfg["segmentation"], "method": method}
+    size = imgs.shape[1]
+    packed = np.lib.format.open_memmap(out, mode="w+", dtype=np.uint8, shape=(len(imgs), (size * size + 7) // 8))
+
+    def work(i):
+        packed[i] = np.packbits(segment_leaf(np.ascontiguousarray(imgs[i]), seg).ravel())
+
+    print(f"Building reference masks ({method}) for {len(imgs)} images ...")
+    with ThreadPoolExecutor(max_workers=n_threads) as ex:
+        list(ex.map(work, range(len(imgs))))
+    packed.flush()
+    del packed
+    save_json(key, meta)
+    return out

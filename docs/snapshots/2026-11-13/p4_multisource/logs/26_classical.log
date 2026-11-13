@@ -1,0 +1,725 @@
+task bin: 7754 images, sources ['brahmanbaria', 'nazirpur', 'pd_raw', 'pk_raw', 'plantdoc', 'plantvillage', 'plantwild', 'tomato_village']
+  loso brahmanbaria bin: 324s
+  loso nazirpur bin: 510s
+  loso pd_raw bin: 712s
+  loso pk_raw bin: 671s
+  loso plantdoc bin: 658s
+  loso plantvillage bin: 648s
+  loso plantwild bin: 501s
+  loso tomato_village bin: 554s
+  seen seed42 bin: 712s
+  seen seed43 bin: 592s
+  seen seed44 bin: 657s
+  seen seed45 bin: 631s
+  seen seed46 bin: 597s
+task six: 5315 images, sources ['brahmanbaria', 'nazirpur', 'pd_raw', 'pk_raw', 'plantdoc', 'plantvillage', 'plantwild', 'tomato_village']
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+  loso brahmanbaria six: 604s
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+  loso nazirpur six: 639s
+  loso pd_raw six: 716s
+  loso pk_raw six: 673s
+  loso plantdoc six: 19561s
+  loso plantvillage six: 773s
+  loso plantwild six: 575s
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+  loso tomato_village six: 658s
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:614: UserWarning: A single label was found in 'y_true' and 'y_pred'. For the confusion matrix to have the correct shape, use the 'labels' parameter to pass all known labels.
+  warnings.warn(
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+  seen seed42 six: 815s
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:614: UserWarning: A single label was found in 'y_true' and 'y_pred'. For the confusion matrix to have the correct shape, use the 'labels' parameter to pass all known labels.
+  warnings.warn(
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+  seen seed43 six: 789s
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:614: UserWarning: A single label was found in 'y_true' and 'y_pred'. For the confusion matrix to have the correct shape, use the 'labels' parameter to pass all known labels.
+  warnings.warn(
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:614: UserWarning: A single label was found in 'y_true' and 'y_pred'. For the confusion matrix to have the correct shape, use the 'labels' parameter to pass all known labels.
+  warnings.warn(
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+  seen seed44 six: 1195s
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:614: UserWarning: A single label was found in 'y_true' and 'y_pred'. For the confusion matrix to have the correct shape, use the 'labels' parameter to pass all known labels.
+  warnings.warn(
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:614: UserWarning: A single label was found in 'y_true' and 'y_pred'. For the confusion matrix to have the correct shape, use the 'labels' parameter to pass all known labels.
+  warnings.warn(
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+  seen seed45 six: 777s
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+F:\NUST\ML\code\mid\Tomato-Leaf-Disease-Recognition\.venv\Lib\site-packages\sklearn\metrics\_classification.py:2939: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+  seen seed46 six: 551s
+done
+
+real	601m53.490s
+user	0m0.000s
+sys	0m0.062s

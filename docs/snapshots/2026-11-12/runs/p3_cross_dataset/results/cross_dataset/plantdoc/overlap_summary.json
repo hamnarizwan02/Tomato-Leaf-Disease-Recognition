@@ -1,0 +1,25 @@
+{
+  "n_external": 580,
+  "n_overlap": 270,
+  "n_sha_match": 257,
+  "n_content_match": 270,
+  "n_filename_match": 272,
+  "n_filename_match_confirmed_by_content_or_sha": 249,
+  "n_independent": 310,
+  "independent_per_class": {
+    "septoria_leaf_spot": 77,
+    "late_blight": 53,
+    "leaf_mold": 51,
+    "healthy": 46,
+    "yellow_leaf_curl_virus": 44,
+    "early_blight": 39
+  },
+  "overlap_per_class": {
+    "septoria_leaf_spot": 74,
+    "late_blight": 58,
+    "early_blight": 49,
+    "leaf_mold": 40,
+    "yellow_leaf_curl_virus": 32,
+    "healthy": 17
+  }
+}

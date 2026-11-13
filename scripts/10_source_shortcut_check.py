@@ -8,14 +8,12 @@ Reads image headers only (no decoding). Uses the manifest's grouped split (train
 Outputs (results/): source_shortcut_metadata.csv, source_shortcut_by_class.csv, source_shortcut_result.json
 """
 import sys
-from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
-from PIL import Image  # noqa: E402
 from sklearn.dummy import DummyClassifier  # noqa: E402
 from sklearn.ensemble import RandomForestClassifier  # noqa: E402
 from sklearn.metrics import accuracy_score, f1_score  # noqa: E402
@@ -23,27 +21,16 @@ from sklearn.model_selection import StratifiedGroupKFold, cross_val_predict  # n
 
 from src.config import load_config  # noqa: E402
 from src.data import load_manifest  # noqa: E402
+from src.metadata import META_FEATURES, image_metadata  # noqa: E402
 from src.utils import save_json  # noqa: E402
 
 
 def main():
     cfg = load_config()
-    res, root = cfg["paths"]["results_dir"], cfg["paths"]["data_root"]
+    res = cfg["paths"]["results_dir"]
     df = load_manifest(cfg)
-
-    def meta(p):
-        with Image.open(root / p) as im:
-            w, h = im.size
-        return w, h, (root / p).stat().st_size
-
-    with ThreadPoolExecutor(max_workers=8) as ex:
-        m = list(ex.map(meta, df["path"]))
-    md = pd.DataFrame(m, columns=["width", "height", "file_bytes"])
-    md["megapixels"] = md.width * md.height / 1e6
-    md["aspect"] = md.width / md.height
-    md["log_pixels"] = np.log10(md.width * md.height)
-    md["bytes_per_pixel"] = md.file_bytes / (md.width * md.height)
-    feats = ["width", "height", "aspect", "log_pixels", "file_bytes", "bytes_per_pixel"]
+    md = image_metadata(cfg, df).drop(columns="path")
+    feats = META_FEATURES
     out = pd.concat([df[["path", "label", "split", "group"]], md], axis=1)
     out.to_csv(res / "source_shortcut_metadata.csv", index=False)
     (out.groupby("label")[["megapixels", "aspect", "bytes_per_pixel"]].median()

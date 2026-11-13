@@ -24,7 +24,7 @@ import pandas as pd  # noqa: E402
 from PIL import Image  # noqa: E402
 
 from src.config import load_config  # noqa: E402
-from src.data import SPLITS, load_cache, load_manifest, split_indices  # noqa: E402
+from src.data import SPLITS, ensure_ref_masks, load_cache, load_manifest, split_indices  # noqa: E402
 from src.duplicates import find_near_duplicates  # noqa: E402
 from src.evaluate import pretty  # noqa: E402
 from src.features import worker_cfg  # noqa: E402
@@ -186,11 +186,12 @@ def step_duplicates(cfg, df, imgs, res):
 
 
 def step_gallery(cfg, df, imgs, res):
+    ensure_ref_masks(cfg, df)
     sub = worker_cfg(cfg)
     i = int(np.where((df["split"] == "test") & (df["label"] == "healthy"))[0][0]) if (
         (df["split"] == "test") & (df["label"] == "healthy")).any() else int(np.where(df["split"] == "test")[0][0])
-    conds = all_conditions(cfg)
-    ncol = 5
+    conds = all_conditions(cfg, extended=True)
+    ncol = 8
     nrow = int(np.ceil((len(conds) + 1) / ncol))
     fig, axes = plt.subplots(nrow, ncol, figsize=(2.3 * ncol, 2.3 * nrow))
     axes = axes.ravel()

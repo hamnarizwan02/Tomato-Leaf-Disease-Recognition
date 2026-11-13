@@ -1,0 +1,13 @@
+# PlantDoc (Singh et al., 2020, CODS-COMAD; github.com/pratikkayal/PlantDoc-Dataset, CC BY 4.0).
+# Web-sourced, uncontrolled-background tomato leaf images. Train and test folders are both used as external test data
+# (nothing is trained on PlantDoc). Classes without a counterpart in our six (bacterial spot, mosaic virus, spider
+# mites) are not mapped and therefore not scored. Downloaded 2026-11-12; original file names in file_map.csv.
+name: plantdoc
+root: F:/NUST/ML/external/plantdoc
+class_map:
+  Tomato Early blight leaf: early_blight
+  Tomato leaf late blight: late_blight
+  Tomato Septoria leaf spot: septoria_leaf_spot
+  Tomato mold leaf: leaf_mold
+  Tomato leaf yellow virus: yellow_leaf_curl_virus
+  Tomato leaf: healthy

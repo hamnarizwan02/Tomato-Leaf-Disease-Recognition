@@ -1,0 +1,41 @@
+Hashing 7200 images to cluster near-duplicates (reads every file once) ...
+Dropping 163 images that are (copies of) a photo filed under two different diseases -> results/dropped_cross_class.csv
+near-duplicate pairs: 2693 (61 across different classes = label noise). groups 1869 -> 1516; largest group: 36 images
+Wrote F:\NUST\ML\runs\p2_supplied_grouped\work\manifest_pipeline.csv  (7037 images, 1486 source photos)
+split                   train  val  test
+label                                   
+early_blight              768  162   162
+healthy                   840  182   178
+late_blight               832  177   174
+leaf_mold                 826  173   176
+septoria_leaf_spot        832  177   178
+yellow_leaf_curl_virus    842  179   179
+reading 7037 thumbnails (8 rotations/flips each) ...
+  n_images_scanned: 7037
+  n_pipeline_groups: 1486
+  content_threshold: 0.95
+  n_content_pairs: 7935
+  n_content_pairs_cross_class: 2
+  n_names_under_two_classes: 8
+  n_images_dropped_cross_class: 20
+  n_images_kept: 7017
+  n_groups: 936
+  n_singletons: 86
+  largest_group: 49
+  largest_group_frac: 0.006983041185691891
+  per_class_kept: {'yellow_leaf_curl_virus': 1200, 'healthy': 1200, 'septoria_leaf_spot': 1184, 'late_blight': 1178, 'leaf_mold': 1175, 'early_blight': 1080}
+  per_class_groups: {'early_blight': 133, 'healthy': 173, 'late_blight': 121, 'leaf_mold': 216, 'septoria_leaf_spot': 207, 'yellow_leaf_curl_virus': 86}
+  grouped_test_frac_family_in_trainval_max: 0.0
+  random_test_frac_family_in_trainval_mean: 0.9873453853472883
+split                   test  train  val
+label                                   
+early_blight             162    756  162
+healthy                  170    845  185
+late_blight              161    830  187
+leaf_mold                173    827  175
+septoria_leaf_spot       161    829  194
+yellow_leaf_curl_virus   153    867  180
+
+real	2m25.453s
+user	0m0.000s
+sys	0m0.031s

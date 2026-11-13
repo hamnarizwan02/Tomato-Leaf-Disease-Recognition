@@ -1,0 +1,35 @@
+{
+  "n_scanned": 8196,
+  "n_pairs": 2335,
+  "n_dropped_cross_source": 425,
+  "dropped_by_source": {
+    "plantdoc": 277,
+    "plantwild": 146,
+    "plantvillage": 2
+  },
+  "n_label_conflicts": 72,
+  "n_pd_raw": 296,
+  "n_pk_raw": 517,
+  "n_final": 7754,
+  "per_source": {
+    "plantwild": 1820,
+    "tomato_village": 1512,
+    "plantvillage": 1098,
+    "brahmanbaria": 1035,
+    "nazirpur": 1007,
+    "pk_raw": 517,
+    "plantdoc": 469,
+    "pd_raw": 296
+  },
+  "groups_per_source": {
+    "brahmanbaria": 1032,
+    "nazirpur": 919,
+    "pd_raw": 257,
+    "pk_raw": 507,
+    "plantdoc": 455,
+    "plantvillage": 1094,
+    "plantwild": 1726,
+    "tomato_village": 977
+  },
+  "largest_group": 12
+}
